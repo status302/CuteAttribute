@@ -18,7 +18,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        textView.attributedText =  text.cute
+        textView.attributedText = text.cute
             .from(0)
             .to(10)
             .yellow
@@ -36,12 +36,5 @@ class ViewController: UIViewController {
             .underlineColor(UIColor.orange)
             .attributedString
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 
