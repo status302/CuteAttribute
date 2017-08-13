@@ -17,7 +17,7 @@ extension CuteAttribute where Base: NSMutableAttributedString {
         return underline(.styleNone)
     }
     
-    var ThickUnderline: CuteAttribute<Base> {
+    var thickUnderline: CuteAttribute<Base> {
         return underline(.styleThick)
     }
     
