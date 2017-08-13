@@ -2,6 +2,8 @@ CuteAttribute
 ===
 A elegant way to deal with attributed string in swift. It's convenient to create attributed string by `.cute`, whatever from `String`, `NSString`, `NSAttributedString` or `NSMutableAttributedString`. It's so amazing that almost all methods support `chaining`. I create this project just because I met [Typeset](http://github.com/draveness/typeset) serveral days ago. But I found it's so hard to use by swift. So I made this. Thanks [Typeset](http://github.com/draveness/typeset).
 
+![](https://github.com/qiuncheng/CuteAttribute/blob/master/Images/screenshot.png)
+
 Support
 ===
 Swift 3.0 & iOS 8+
