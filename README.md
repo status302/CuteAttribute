@@ -14,7 +14,7 @@ Installation
 3. `import CuteAttribute`
 
 #### Carthage
-1. Add CuteAttribute to your Cartfile. e.g., `github "qiuncheng/CuteAttribute" ~> 0.1.0`
+1. Add CuteAttribute to your Cartfile. e.g., `github "qiuncheng/CuteAttribute" ~> 0.1.1`
 2. Run `carthage update --platform ios`
 3. Follow the rest of the [standard Carthage installation](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) instructions to add CuteAttribute to your project.
 4. `import CuteAttribute`
