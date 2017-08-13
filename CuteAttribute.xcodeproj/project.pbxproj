@@ -12,6 +12,7 @@
 		3F3047121F40945900F8BF5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3047101F40945900F8BF5D /* Main.storyboard */; };
 		3F3047141F40945900F8BF5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3047131F40945900F8BF5D /* Assets.xcassets */; };
 		3F3047171F40945900F8BF5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3047151F40945900F8BF5D /* LaunchScreen.storyboard */; };
+		3F30471C1F40964000F8BF5D /* CuteAttribute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7D3CB01F406E6900409657 /* CuteAttribute.framework */; };
 		3F7D3CBA1F406E6900409657 /* CuteAttribute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7D3CB01F406E6900409657 /* CuteAttribute.framework */; };
 		3F7D3CBF1F406E6900409657 /* CuteAttributeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CBE1F406E6900409657 /* CuteAttributeTests.swift */; };
 		3F7D3CC11F406E6900409657 /* CuteAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F7D3CB31F406E6900409657 /* CuteAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -74,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F30471C1F40964000F8BF5D /* CuteAttribute.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,6 +373,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vsccw.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -383,6 +386,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vsccw.Example;
 				PRODUCT_NAME = "$(TARGET_NAME)";
