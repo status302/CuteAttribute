@@ -8,44 +8,44 @@
 
 import UIKit
 
-extension CuteAttribute where Base: NSMutableAttributedString {
-    var singleUnderline: CuteAttribute<Base> {
+public extension CuteAttribute where Base: NSMutableAttributedString {
+    public var singleUnderline: CuteAttribute<Base> {
         return underline(.styleSingle)
     }
     
-    var noneUnderline: CuteAttribute<Base> {
+    public var noneUnderline: CuteAttribute<Base> {
         return underline(.styleNone)
     }
     
-    var thickUnderline: CuteAttribute<Base> {
+    public var thickUnderline: CuteAttribute<Base> {
         return underline(.styleThick)
     }
     
-    var doubleUnderline: CuteAttribute<Base> {
+    public var doubleUnderline: CuteAttribute<Base> {
         return underline(.styleDouble)
     }
     
-    var patternSolidUnderline: CuteAttribute<Base> {
+    public var patternSolidUnderline: CuteAttribute<Base> {
         return underline(.patternSolid)
     }
     
-    var patternDotUnderline: CuteAttribute<Base> {
+    public var patternDotUnderline: CuteAttribute<Base> {
         return underline(.patternDot)
     }
     
-    var patternDashUnderline: CuteAttribute<Base> {
+    public var patternDashUnderline: CuteAttribute<Base> {
         return underline(.patternDash)
     }
     
-    var patternDashDotUnderline: CuteAttribute<Base> {
+    public var patternDashDotUnderline: CuteAttribute<Base> {
         return underline(.patternDashDot)
     }
     
-    var patternDashDotDotUnderline: CuteAttribute<Base> {
+    public var patternDashDotDotUnderline: CuteAttribute<Base> {
         return underline(.patternDashDotDot)
     }
     
-    var byWordUnderline: CuteAttribute<Base> {
+    public var byWordUnderline: CuteAttribute<Base> {
         return underline(.byWord)
     }
 }

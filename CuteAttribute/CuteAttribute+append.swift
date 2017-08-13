@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension CuteAttribute where Base: NSMutableAttributedString {
+public extension CuteAttribute where Base: NSMutableAttributedString {
     public func append(_ string: Any) -> CuteAttribute<Base> {
         let attributedString = CuteAttribute.convertToMutableAttributedString(string)
         base.append(attributedString)

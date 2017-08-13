@@ -12,11 +12,11 @@ public struct RegexHelper {
     
     let regex: NSRegularExpression
     
-    init(pattern: String) throws {
+    public init(pattern: String) throws {
         try regex = NSRegularExpression(pattern: pattern, options: .allowCommentsAndWhitespace)
     }
     
-    func matchs(input: String) -> [NSRange] {
+    public func matchs(input: String) -> [NSRange] {
         let matches = regex.matches(in: input, options: [], range: NSRange(location: 0, length: input.utf16.count))
         
         return matches.flatMap({

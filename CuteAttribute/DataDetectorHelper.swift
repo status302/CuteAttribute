@@ -8,14 +8,14 @@
 
 import UIKit
 
-struct DataDetectorHelper {
+public struct DataDetectorHelper {
     let dataDetactor: NSDataDetector
     
-    init(types: NSTextCheckingTypes) throws {
+    public init(types: NSTextCheckingTypes) throws {
         try dataDetactor = NSDataDetector(types: types)
     }
     
-    func matches(string: String) -> [NSRange] {
+    public func matches(string: String) -> [NSRange] {
         let range = NSRange(location: 0, length: string.length)
         return dataDetactor.matches(in: string, options: [], range: range)
             .filter({
