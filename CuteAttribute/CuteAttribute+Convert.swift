@@ -3,7 +3,7 @@
 //  Cute
 //
 //  Created by vsccw on 2017/8/10.
-//  Copyright © 2017年 YOLO. All rights reserved.
+//  Copyright © 2017年 https://vsccw.com. All rights reserved.
 //
 
 import UIKit
