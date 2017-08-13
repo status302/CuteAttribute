@@ -15,12 +15,14 @@ public func >>(left: NSRange, right: NSRange) -> Bool {
 }
 
 public extension NSAttributedString {
+    
     public var cute: CuteAttribute<NSMutableAttributedString> {
         return CuteAttribute(NSMutableAttributedString(attributedString: self))
     }
 }
 
 public extension NSString {
+    
     public var range: NSRange {
         return NSRange(location: 0, length: length)
     }
