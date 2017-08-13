@@ -9,7 +9,6 @@
 import UIKit
 
 internal struct CuteAttributeKey {
-    static let rangeKey = UnsafeRawPointer(bitPattern: "rangeKey".hashValue)
     static let rangesKey = UnsafeRawPointer(bitPattern: "rangesKey".hashValue)
     
     static let fromKey = UnsafeRawPointer(bitPattern: "fromKey".hashValue)

@@ -9,19 +9,9 @@
 import UIKit
 
 public extension CuteAttribute where Base: NSMutableAttributedString {
-    internal(set) var range: NSRange {
-        get {
-            let defaultRange = NSRange(location: 0, length: base.length)
-            return objc_getAssociatedObject(base, CuteAttributeKey.rangeKey) as? NSRange ?? defaultRange
-        }
-        set {
-            objc_setAssociatedObject(base, CuteAttributeKey.rangeKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-        }
-    }
     
     public func range(_ range: NSRange) -> CuteAttribute<Base> {
         assert(base.string.nsrange >> range, "range should be in range of string.")
-        self.range = range
         self.ranges = [range]
         return self
     }

@@ -19,8 +19,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     public func to(_ location: Int) -> CuteAttribute<Base> {
         assert(location <= base.string.length, "`to` must less than string's length.")
         let range = NSRange(location: from, length: location - from)
-        self.range = range
-        return self
+        return self.range(range)
     }
     
     public func matchAll() -> CuteAttribute<Base> {
@@ -59,8 +58,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     
     public func match(range ran: NSRange) -> CuteAttribute<Base> {
         assert(base.string.nsrange >> ran, "range should be in range of string.")
-        self.range = ran
-        return self
+        return self.range(ran)
     }
     
     public func matchAllURL() -> CuteAttribute<Base> {
