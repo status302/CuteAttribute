@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   
   s.author       = { "qiuncheng" => "qiuncheng@gmail.com" }
-
+  s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/qiuncheng/CuteAttribute.git", :tag => "#{s.version}" }
 
   s.source_files = "CuteAttribute/*.{swift, h}"
