@@ -10,6 +10,17 @@
 		3F7D3CBA1F406E6900409657 /* CuteAttribute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7D3CB01F406E6900409657 /* CuteAttribute.framework */; };
 		3F7D3CBF1F406E6900409657 /* CuteAttributeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CBE1F406E6900409657 /* CuteAttributeTests.swift */; };
 		3F7D3CC11F406E6900409657 /* CuteAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F7D3CB31F406E6900409657 /* CuteAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3F7D3CD51F406F6000409657 /* CuteAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CCA1F406F6000409657 /* CuteAttribute.swift */; };
+		3F7D3CD61F406F6000409657 /* CuteAttribute+Attributes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CCB1F406F6000409657 /* CuteAttribute+Attributes.swift */; };
+		3F7D3CD71F406F6000409657 /* CuteAttribute+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CCC1F406F6000409657 /* CuteAttribute+Color.swift */; };
+		3F7D3CD81F406F6000409657 /* CuteAttribute+Convert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CCD1F406F6000409657 /* CuteAttribute+Convert.swift */; };
+		3F7D3CD91F406F6000409657 /* CuteAttribute+Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CCE1F406F6000409657 /* CuteAttribute+Match.swift */; };
+		3F7D3CDA1F406F6000409657 /* CuteAttribute+NSRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CCF1F406F6000409657 /* CuteAttribute+NSRange.swift */; };
+		3F7D3CDB1F406F6000409657 /* CuteAttributeKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CD01F406F6000409657 /* CuteAttributeKeys.swift */; };
+		3F7D3CDC1F406F6000409657 /* DataDetectorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CD11F406F6000409657 /* DataDetectorHelper.swift */; };
+		3F7D3CDD1F406F6000409657 /* NSString+Cute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CD21F406F6000409657 /* NSString+Cute.swift */; };
+		3F7D3CDE1F406F6000409657 /* RegexHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CD31F406F6000409657 /* RegexHelper.swift */; };
+		3F7D3CDF1F406F6000409657 /* UIColor+Cute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CD41F406F6000409657 /* UIColor+Cute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +40,17 @@
 		3F7D3CB91F406E6900409657 /* CuteAttributeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CuteAttributeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7D3CBE1F406E6900409657 /* CuteAttributeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuteAttributeTests.swift; sourceTree = "<group>"; };
 		3F7D3CC01F406E6900409657 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3F7D3CCA1F406F6000409657 /* CuteAttribute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuteAttribute.swift; sourceTree = "<group>"; };
+		3F7D3CCB1F406F6000409657 /* CuteAttribute+Attributes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CuteAttribute+Attributes.swift"; sourceTree = "<group>"; };
+		3F7D3CCC1F406F6000409657 /* CuteAttribute+Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CuteAttribute+Color.swift"; sourceTree = "<group>"; };
+		3F7D3CCD1F406F6000409657 /* CuteAttribute+Convert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CuteAttribute+Convert.swift"; sourceTree = "<group>"; };
+		3F7D3CCE1F406F6000409657 /* CuteAttribute+Match.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CuteAttribute+Match.swift"; sourceTree = "<group>"; };
+		3F7D3CCF1F406F6000409657 /* CuteAttribute+NSRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CuteAttribute+NSRange.swift"; sourceTree = "<group>"; };
+		3F7D3CD01F406F6000409657 /* CuteAttributeKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuteAttributeKeys.swift; sourceTree = "<group>"; };
+		3F7D3CD11F406F6000409657 /* DataDetectorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDetectorHelper.swift; sourceTree = "<group>"; };
+		3F7D3CD21F406F6000409657 /* NSString+Cute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+Cute.swift"; sourceTree = "<group>"; };
+		3F7D3CD31F406F6000409657 /* RegexHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexHelper.swift; sourceTree = "<group>"; };
+		3F7D3CD41F406F6000409657 /* UIColor+Cute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Cute.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +93,17 @@
 		3F7D3CB21F406E6900409657 /* CuteAttribute */ = {
 			isa = PBXGroup;
 			children = (
+				3F7D3CCA1F406F6000409657 /* CuteAttribute.swift */,
+				3F7D3CCB1F406F6000409657 /* CuteAttribute+Attributes.swift */,
+				3F7D3CCC1F406F6000409657 /* CuteAttribute+Color.swift */,
+				3F7D3CCD1F406F6000409657 /* CuteAttribute+Convert.swift */,
+				3F7D3CCE1F406F6000409657 /* CuteAttribute+Match.swift */,
+				3F7D3CCF1F406F6000409657 /* CuteAttribute+NSRange.swift */,
+				3F7D3CD01F406F6000409657 /* CuteAttributeKeys.swift */,
+				3F7D3CD11F406F6000409657 /* DataDetectorHelper.swift */,
+				3F7D3CD21F406F6000409657 /* NSString+Cute.swift */,
+				3F7D3CD31F406F6000409657 /* RegexHelper.swift */,
+				3F7D3CD41F406F6000409657 /* UIColor+Cute.swift */,
 				3F7D3CB31F406E6900409657 /* CuteAttribute.h */,
 				3F7D3CB41F406E6900409657 /* Info.plist */,
 			);
@@ -148,6 +181,7 @@
 				TargetAttributes = {
 					3F7D3CAF1F406E6900409657 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					3F7D3CB81F406E6900409657 = {
@@ -196,6 +230,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F7D3CD61F406F6000409657 /* CuteAttribute+Attributes.swift in Sources */,
+				3F7D3CDB1F406F6000409657 /* CuteAttributeKeys.swift in Sources */,
+				3F7D3CD91F406F6000409657 /* CuteAttribute+Match.swift in Sources */,
+				3F7D3CDA1F406F6000409657 /* CuteAttribute+NSRange.swift in Sources */,
+				3F7D3CDF1F406F6000409657 /* UIColor+Cute.swift in Sources */,
+				3F7D3CDD1F406F6000409657 /* NSString+Cute.swift in Sources */,
+				3F7D3CD51F406F6000409657 /* CuteAttribute.swift in Sources */,
+				3F7D3CD71F406F6000409657 /* CuteAttribute+Color.swift in Sources */,
+				3F7D3CDE1F406F6000409657 /* RegexHelper.swift in Sources */,
+				3F7D3CD81F406F6000409657 /* CuteAttribute+Convert.swift in Sources */,
+				3F7D3CDC1F406F6000409657 /* DataDetectorHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +367,7 @@
 		3F7D3CC51F406E6900409657 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -333,6 +379,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.vsccw.CuteAttribute;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -340,6 +387,7 @@
 		3F7D3CC61F406E6900409657 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -358,6 +406,7 @@
 		3F7D3CC81F406E6900409657 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = CuteAttributeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vsccw.CuteAttributeTests;
@@ -369,6 +418,7 @@
 		3F7D3CC91F406E6900409657 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				INFOPLIST_FILE = CuteAttributeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.vsccw.CuteAttributeTests;
@@ -396,6 +446,7 @@
 				3F7D3CC61F406E6900409657 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F7D3CC71F406E6900409657 /* Build configuration list for PBXNativeTarget "CuteAttributeTests" */ = {
 			isa = XCConfigurationList;
@@ -404,6 +455,7 @@
 				3F7D3CC91F406E6900409657 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
