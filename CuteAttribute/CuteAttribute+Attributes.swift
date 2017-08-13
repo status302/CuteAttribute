@@ -146,16 +146,4 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
         return self
     }
-    
-    public func append(_ string: Any) -> CuteAttribute<Base> {
-        let attributedString = CuteAttribute.convertToMutableAttributedString(string)
-        base.append(attributedString)
-        return self
-    }
-}
-
-public extension CuteAttribute where Base: NSMutableAttributedString {
-    public var attributedString: NSMutableAttributedString {
-        return base
-    }
 }

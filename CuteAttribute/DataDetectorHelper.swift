@@ -24,6 +24,5 @@ struct DataDetectorHelper {
             .flatMap({
                 $0.range
             })
-        
     }
 }

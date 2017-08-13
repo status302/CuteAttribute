@@ -57,6 +57,12 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    public func match(range ran: NSRange) -> CuteAttribute<Base> {
+        assert(base.string.nsrange >> ran, "range should be in range of string.")
+        self.range = ran
+        return self
+    }
+    
     public func matchAllURL() -> CuteAttribute<Base> {
         return matchAllAttribute(checkingType: .link)
     }

@@ -27,3 +27,9 @@ public extension CuteAttributeable {
 }
 
 extension NSMutableAttributedString: CuteAttributeable { }
+
+public extension CuteAttribute where Base: NSMutableAttributedString {
+    public var attributedString: NSMutableAttributedString {
+        return base
+    }
+}

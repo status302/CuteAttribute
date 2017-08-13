@@ -19,8 +19,8 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
     }
     
-    func range(_ range: NSRange) -> CuteAttribute<Base> {
-        assert(base.string.nsrange >> range, "range must in string.")
+    public func range(_ range: NSRange) -> CuteAttribute<Base> {
+        assert(base.string.nsrange >> range, "range should be in range of string.")
         self.range = range
         self.ranges = [range]
         return self
@@ -36,7 +36,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
     }
     
-    func ranges(_ ranges: [NSRange]) -> CuteAttribute<Base> {
+    public func ranges(_ ranges: [NSRange]) -> CuteAttribute<Base> {
         let isValid = ranges
             .flatMap { return base.string.nsrange >> $0 }
             .reduce(true) { return $0.1 && $0.0 }

@@ -18,9 +18,10 @@
 		3F7D3CDA1F406F6000409657 /* CuteAttribute+NSRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CCF1F406F6000409657 /* CuteAttribute+NSRange.swift */; };
 		3F7D3CDB1F406F6000409657 /* CuteAttributeKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CD01F406F6000409657 /* CuteAttributeKeys.swift */; };
 		3F7D3CDC1F406F6000409657 /* DataDetectorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CD11F406F6000409657 /* DataDetectorHelper.swift */; };
-		3F7D3CDD1F406F6000409657 /* NSString+Cute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CD21F406F6000409657 /* NSString+Cute.swift */; };
+		3F7D3CDD1F406F6000409657 /* String+Cute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CD21F406F6000409657 /* String+Cute.swift */; };
 		3F7D3CDE1F406F6000409657 /* RegexHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CD31F406F6000409657 /* RegexHelper.swift */; };
 		3F7D3CDF1F406F6000409657 /* UIColor+Cute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CD41F406F6000409657 /* UIColor+Cute.swift */; };
+		3F7D3CE11F407AF800409657 /* CuteAttribute+append.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CE01F407AF800409657 /* CuteAttribute+append.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,9 +49,10 @@
 		3F7D3CCF1F406F6000409657 /* CuteAttribute+NSRange.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CuteAttribute+NSRange.swift"; sourceTree = "<group>"; };
 		3F7D3CD01F406F6000409657 /* CuteAttributeKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CuteAttributeKeys.swift; sourceTree = "<group>"; };
 		3F7D3CD11F406F6000409657 /* DataDetectorHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataDetectorHelper.swift; sourceTree = "<group>"; };
-		3F7D3CD21F406F6000409657 /* NSString+Cute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+Cute.swift"; sourceTree = "<group>"; };
+		3F7D3CD21F406F6000409657 /* String+Cute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Cute.swift"; sourceTree = "<group>"; };
 		3F7D3CD31F406F6000409657 /* RegexHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexHelper.swift; sourceTree = "<group>"; };
 		3F7D3CD41F406F6000409657 /* UIColor+Cute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Cute.swift"; sourceTree = "<group>"; };
+		3F7D3CE01F407AF800409657 /* CuteAttribute+append.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CuteAttribute+append.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,15 +97,16 @@
 			children = (
 				3F7D3CCA1F406F6000409657 /* CuteAttribute.swift */,
 				3F7D3CCB1F406F6000409657 /* CuteAttribute+Attributes.swift */,
+				3F7D3CE01F407AF800409657 /* CuteAttribute+append.swift */,
+				3F7D3CD41F406F6000409657 /* UIColor+Cute.swift */,
 				3F7D3CCC1F406F6000409657 /* CuteAttribute+Color.swift */,
 				3F7D3CCD1F406F6000409657 /* CuteAttribute+Convert.swift */,
 				3F7D3CCE1F406F6000409657 /* CuteAttribute+Match.swift */,
 				3F7D3CCF1F406F6000409657 /* CuteAttribute+NSRange.swift */,
 				3F7D3CD01F406F6000409657 /* CuteAttributeKeys.swift */,
 				3F7D3CD11F406F6000409657 /* DataDetectorHelper.swift */,
-				3F7D3CD21F406F6000409657 /* NSString+Cute.swift */,
+				3F7D3CD21F406F6000409657 /* String+Cute.swift */,
 				3F7D3CD31F406F6000409657 /* RegexHelper.swift */,
-				3F7D3CD41F406F6000409657 /* UIColor+Cute.swift */,
 				3F7D3CB31F406E6900409657 /* CuteAttribute.h */,
 				3F7D3CB41F406E6900409657 /* Info.plist */,
 			);
@@ -231,11 +234,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F7D3CD61F406F6000409657 /* CuteAttribute+Attributes.swift in Sources */,
+				3F7D3CE11F407AF800409657 /* CuteAttribute+append.swift in Sources */,
 				3F7D3CDB1F406F6000409657 /* CuteAttributeKeys.swift in Sources */,
 				3F7D3CD91F406F6000409657 /* CuteAttribute+Match.swift in Sources */,
 				3F7D3CDA1F406F6000409657 /* CuteAttribute+NSRange.swift in Sources */,
 				3F7D3CDF1F406F6000409657 /* UIColor+Cute.swift in Sources */,
-				3F7D3CDD1F406F6000409657 /* NSString+Cute.swift in Sources */,
+				3F7D3CDD1F406F6000409657 /* String+Cute.swift in Sources */,
 				3F7D3CD51F406F6000409657 /* CuteAttribute.swift in Sources */,
 				3F7D3CD71F406F6000409657 /* CuteAttribute+Color.swift in Sources */,
 				3F7D3CDE1F406F6000409657 /* RegexHelper.swift in Sources */,
