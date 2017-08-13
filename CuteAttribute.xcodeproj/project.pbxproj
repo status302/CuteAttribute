@@ -22,6 +22,7 @@
 		3F7D3CDE1F406F6000409657 /* RegexHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CD31F406F6000409657 /* RegexHelper.swift */; };
 		3F7D3CDF1F406F6000409657 /* UIColor+Cute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CD41F406F6000409657 /* UIColor+Cute.swift */; };
 		3F7D3CE11F407AF800409657 /* CuteAttribute+append.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CE01F407AF800409657 /* CuteAttribute+append.swift */; };
+		3F7D3CE31F407D7600409657 /* CuteAttribute+Underline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CE21F407D7600409657 /* CuteAttribute+Underline.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		3F7D3CD31F406F6000409657 /* RegexHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexHelper.swift; sourceTree = "<group>"; };
 		3F7D3CD41F406F6000409657 /* UIColor+Cute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Cute.swift"; sourceTree = "<group>"; };
 		3F7D3CE01F407AF800409657 /* CuteAttribute+append.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CuteAttribute+append.swift"; sourceTree = "<group>"; };
+		3F7D3CE21F407D7600409657 /* CuteAttribute+Underline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CuteAttribute+Underline.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				3F7D3CCA1F406F6000409657 /* CuteAttribute.swift */,
 				3F7D3CCB1F406F6000409657 /* CuteAttribute+Attributes.swift */,
+				3F7D3CE21F407D7600409657 /* CuteAttribute+Underline.swift */,
 				3F7D3CE01F407AF800409657 /* CuteAttribute+append.swift */,
 				3F7D3CD41F406F6000409657 /* UIColor+Cute.swift */,
 				3F7D3CCC1F406F6000409657 /* CuteAttribute+Color.swift */,
@@ -241,6 +244,7 @@
 				3F7D3CDF1F406F6000409657 /* UIColor+Cute.swift in Sources */,
 				3F7D3CDD1F406F6000409657 /* String+Cute.swift in Sources */,
 				3F7D3CD51F406F6000409657 /* CuteAttribute.swift in Sources */,
+				3F7D3CE31F407D7600409657 /* CuteAttribute+Underline.swift in Sources */,
 				3F7D3CD71F406F6000409657 /* CuteAttribute+Color.swift in Sources */,
 				3F7D3CDE1F406F6000409657 /* RegexHelper.swift in Sources */,
 				3F7D3CD81F406F6000409657 /* CuteAttribute+Convert.swift in Sources */,
