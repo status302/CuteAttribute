@@ -3,12 +3,12 @@
 # * https://github.com/supermarin/xcpretty#usage
 
 osx_image: xcode8.3
-language: swift
+language: objective-c
 # cache: cocoapods
 # podfile: Example/Podfile
 # before_install:
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=Example
 script:
-xcodebuild -project CuteAttribute.xcodeproj -target Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
+- xcodebuild -project CuteAttribute.xcodeproj -target Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 - pod lib lint
