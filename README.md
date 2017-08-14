@@ -1,5 +1,6 @@
 CuteAttribute
 ===
+[![Build Status](https://travis-ci.org/qiuncheng/CuteAttribute.svg?branch=master)](https://travis-ci.org/qiuncheng/CuteAttribute)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 [![pod version](https://img.shields.io/badge/Pod-v0.1.1-brightgreen.svg)](https://cocoapods.org/pods/CuteAttribute)
 [![](https://img.shields.io/badge/Swift-3.0-yellowgreen.svg)](https://github.com/qiuncheng/CuteAttribute)
