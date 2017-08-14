@@ -12,7 +12,6 @@
 		3F3047121F40945900F8BF5D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3047101F40945900F8BF5D /* Main.storyboard */; };
 		3F3047141F40945900F8BF5D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F3047131F40945900F8BF5D /* Assets.xcassets */; };
 		3F3047171F40945900F8BF5D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F3047151F40945900F8BF5D /* LaunchScreen.storyboard */; };
-		3F30471C1F40964000F8BF5D /* CuteAttribute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7D3CB01F406E6900409657 /* CuteAttribute.framework */; };
 		3F7D3CBA1F406E6900409657 /* CuteAttribute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7D3CB01F406E6900409657 /* CuteAttribute.framework */; };
 		3F7D3CBF1F406E6900409657 /* CuteAttributeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CBE1F406E6900409657 /* CuteAttributeTests.swift */; };
 		3F7D3CC11F406E6900409657 /* CuteAttribute.h in Headers */ = {isa = PBXBuildFile; fileRef = 3F7D3CB31F406E6900409657 /* CuteAttribute.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -29,6 +28,8 @@
 		3F7D3CDF1F406F6000409657 /* UIColor+Cute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CD41F406F6000409657 /* UIColor+Cute.swift */; };
 		3F7D3CE11F407AF800409657 /* CuteAttribute+append.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CE01F407AF800409657 /* CuteAttribute+append.swift */; };
 		3F7D3CE31F407D7600409657 /* CuteAttribute+Underline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CE21F407D7600409657 /* CuteAttribute+Underline.swift */; };
+		3F9B002E1F41E72C0021CBDD /* CuteAttribute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7D3CB01F406E6900409657 /* CuteAttribute.framework */; };
+		3F9B002F1F41E72C0021CBDD /* CuteAttribute.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7D3CB01F406E6900409657 /* CuteAttribute.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,28 @@
 			remoteGlobalIDString = 3F7D3CAF1F406E6900409657;
 			remoteInfo = CuteAttribute;
 		};
+		3F9B00301F41E72C0021CBDD /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3F7D3CA71F406E6900409657 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3F7D3CAF1F406E6900409657;
+			remoteInfo = CuteAttribute;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3F9B00321F41E72C0021CBDD /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3F9B002F1F41E72C0021CBDD /* CuteAttribute.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3F30470A1F40945900F8BF5D /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -75,7 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3F30471C1F40964000F8BF5D /* CuteAttribute.framework in Frameworks */,
+				3F9B002E1F41E72C0021CBDD /* CuteAttribute.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,10 +204,12 @@
 				3F3047061F40945900F8BF5D /* Sources */,
 				3F3047071F40945900F8BF5D /* Frameworks */,
 				3F3047081F40945900F8BF5D /* Resources */,
+				3F9B00321F41E72C0021CBDD /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3F9B00311F41E72C0021CBDD /* PBXTargetDependency */,
 			);
 			name = Example;
 			productName = Example;
@@ -240,10 +264,12 @@
 				TargetAttributes = {
 					3F3047091F40945900F8BF5D = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 7Z9QGDZHJM;
 						ProvisioningStyle = Automatic;
 					};
 					3F7D3CAF1F406E6900409657 = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 7Z9QGDZHJM;
 						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
@@ -346,6 +372,11 @@
 			target = 3F7D3CAF1F406E6900409657 /* CuteAttribute */;
 			targetProxy = 3F7D3CBB1F406E6900409657 /* PBXContainerItemProxy */;
 		};
+		3F9B00311F41E72C0021CBDD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3F7D3CAF1F406E6900409657 /* CuteAttribute */;
+			targetProxy = 3F9B00301F41E72C0021CBDD /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -371,7 +402,9 @@
 		3F30471A1F40945900F8BF5D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7Z9QGDZHJM;
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -384,7 +417,9 @@
 		3F30471B1F40945900F8BF5D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 7Z9QGDZHJM;
 				INFOPLIST_FILE = Example/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -501,6 +536,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7Z9QGDZHJM;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -522,6 +558,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 7Z9QGDZHJM;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -570,6 +607,7 @@
 				3F30471B1F40945900F8BF5D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3F7D3CAA1F406E6900409657 /* Build configuration list for PBXProject "CuteAttribute" */ = {
 			isa = XCConfigurationList;
