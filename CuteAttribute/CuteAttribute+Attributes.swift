@@ -10,6 +10,10 @@ import UIKit
 
 public extension CuteAttribute where Base: NSMutableAttributedString {
     
+    /// Set color for `NSForegroundColorAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter color: UIColor type without default value.
+    /// - Returns: self
     public func color(_ color: UIColor) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(NSForegroundColorAttributeName, value: color, range: $0)
@@ -17,6 +21,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    /// Set baseline for `NSBaselineOffsetAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter baseline: CGFloat type without default value.
+    /// - Returns: self
     public func baseline(_ baseline: CGFloat) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(NSBaselineOffsetAttributeName, value: baseline, range: $0)
@@ -24,6 +32,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    /// Set underline for `NSUnderlineStyleAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter underline: NSUnderlineStyle type without default value.
+    /// - Returns: self
     public func underline(_ underline: NSUnderlineStyle) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(NSUnderlineStyleAttributeName, value: underline.rawValue, range: $0)
@@ -31,6 +43,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    /// Set underlineColor for `NSUnderlineColorAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter color: UIColor type without default value.
+    /// - Returns: self
     public func underlineColor(_ color: UIColor) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(NSUnderlineColorAttributeName, value: color, range: $0)
@@ -38,6 +54,11 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    /// Set underlineStyle for `NSUnderlineStyleAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter underlineStyle: NSUnderlineStyle type without default value.
+    /// - Parameter color: UIColor type without default value.
+    /// - Returns: self
     public func underline(_ underlineStyle: NSUnderlineStyle, color: UIColor) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttributes([NSUnderlineStyleAttributeName: underlineStyle.rawValue, NSUnderlineColorAttributeName: color], range: $0)
@@ -45,6 +66,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    /// Set font for `NSFontAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter font: UIFont type without default value.
+    /// - Returns: self
     public func font(_ font: UIFont) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(NSFontAttributeName, value: font, range: $0)
@@ -52,6 +77,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    /// Set fontName for `NSFontAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter name: String type without default value.
+    /// - Returns: self
     public func fontName(_ name: String) -> CuteAttribute<Base> {
         ranges.forEach {
             var _range = $0
@@ -63,6 +92,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    /// Set strikeThrough for `NSStrikethroughStyleAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter strike: NSUnderlineStyle type without default value.
+    /// - Returns: self
     public func strikeThrough(_ strike: NSUnderlineStyle) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(NSStrikethroughStyleAttributeName, value: strike.rawValue, range: $0)
