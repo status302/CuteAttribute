@@ -2,7 +2,7 @@ CuteAttribute
 ===
 [![Build Status](https://travis-ci.org/qiuncheng/CuteAttribute.svg?branch=master)](https://travis-ci.org/qiuncheng/CuteAttribute)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
-[![pod version](https://img.shields.io/badge/Pod-v0.1.1-brightgreen.svg)](https://cocoapods.org/pods/CuteAttribute)
+[![pod version](https://img.shields.io/badge/Pod-v1.0-brightgreen.svg)](https://cocoapods.org/pods/CuteAttribute)
 [![](https://img.shields.io/badge/Swift-3.0-yellowgreen.svg)](https://github.com/qiuncheng/CuteAttribute)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/qiuncheng/NoticeBar/master/LICENSE)
 
@@ -22,7 +22,7 @@ Installation
 3. `import CuteAttribute`
 
 #### Carthage
-1. Add CuteAttribute to your Cartfile. e.g., `github "qiuncheng/CuteAttribute" ~> 0.1.1`
+1. Add CuteAttribute to your Cartfile. e.g., `github "qiuncheng/CuteAttribute"`
 2. Run `carthage update --platform ios`
 3. Follow the rest of the [standard Carthage installation](https://github.com/Carthage/Carthage#adding-frameworks-to-an-application) instructions to add CuteAttribute to your project.
 4. `import CuteAttribute`
