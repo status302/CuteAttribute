@@ -103,6 +103,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    /// Set strikeThroughColor for `NSStrikethroughColorAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter color: UIColor type without default value.
+    /// - Returns: self
     public func strikeThroughColor(_ color: UIColor) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(NSStrikethroughColorAttributeName, value: color, range: $0)
@@ -110,6 +114,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    /// Set link for `NSLinkAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter link: String type without default value.
+    /// - Returns: self
     public func link(_ link: String) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(NSLinkAttributeName, value: link, range: $0)
@@ -117,6 +125,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    /// Set ligature for `NSLigatureAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter ligature: Int type without default value.
+    /// - Returns: self
     public func ligature(_ ligature: Int) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(NSLigatureAttributeName, value: ligature, range: $0)
@@ -124,6 +136,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    /// Set kern for `NSKernAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter kern: CGFloat type without default value.
+    /// - Returns: self
     public func kern(_ kern: CGFloat) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(NSKernAttributeName, value: kern, range: $0)
@@ -131,6 +147,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    /// Set strokeColor for `NSStrokeColorAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter color: UIColor type without default value.
+    /// - Returns: self
     public func strokeColor(_ color: UIColor) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(NSStrokeColorAttributeName, value: color, range: $0)
@@ -138,6 +158,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    /// Set strokeWidth for `NSStrokeWidthAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter width: CGFloat type without default value.
+    /// - Returns: self
     public func strokeWidth(_ width: CGFloat) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(NSStrokeWidthAttributeName, value: width, range: $0)
@@ -145,6 +169,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    /// Set shadow for `NSShadowAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter shadow: NSShadow type without default value.
+    /// - Returns: self
     public func shadow(_ shadow: NSShadow) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(NSShadowAttributeName, value: shadow, range: $0)
@@ -152,6 +180,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    /// Set textEffect for `NSTextEffectAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter effect: String type without default value.
+    /// - Returns: self
     public func textEffect(_ effect: String) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(NSTextEffectAttributeName, value: effect, range: $0)
@@ -159,6 +191,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    /// Set obliqueness for `NSObliquenessAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter value: CGFloat type without default value.
+    /// - Returns: self
     public func obliqueness(_ value: CGFloat) -> CuteAttribute<Base>{
         ranges.forEach {
             base.addAttribute(NSObliquenessAttributeName, value: value, range: $0)
@@ -166,6 +202,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    /// Set expansion for `NSExpansionAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter value: CGFloat type without default value.
+    /// - Returns: self
     public func expansion(_ value: CGFloat) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(NSExpansionAttributeName, value: value, range: $0)
@@ -173,6 +213,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    /// Set textAttachment for `NSAttachmentAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter value: NSTextAttachment type without default value.
+    /// - Returns: self
     public func textAttachment(_ value: NSTextAttachment) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(NSAttachmentAttributeName, value: value, range: $0)

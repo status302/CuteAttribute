@@ -9,6 +9,10 @@
 import UIKit
 
 public extension CuteAttribute where Base: NSMutableAttributedString {
+    /// Append a `String`, `NSString`, `NSMutableAttributedString` or `NSAttributedString` to the base `NSMutableAttributedString`
+    ///
+    /// - Parameter string: It can be `String`, `NSString`, `NSMutableAttributedString` or `NSAttributedString`
+    /// - Returns: self
     public func append(_ string: Any) -> CuteAttribute<Base> {
         let attributedString = CuteAttribute.convertToMutableAttributedString(string)
         base.append(attributedString)
