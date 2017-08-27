@@ -10,6 +10,10 @@ import UIKit
 
 public extension CuteAttribute where Base: NSMutableAttributedString {
     
+    /// Set the range.
+    ///
+    /// - Parameter range: NSRange value.
+    /// - Returns: self
     public func range(_ range: NSRange) -> CuteAttribute<Base> {
         assert(base.string.nsrange >> range, "range should be in range of string.")
         self.ranges = [range]
@@ -26,6 +30,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
     }
     
+    /// Set the ranges.
+    ///
+    /// - Parameter ranges: [NSRange] value.
+    /// - Returns: self
     public func ranges(_ ranges: [NSRange]) -> CuteAttribute<Base> {
         let isValid = ranges
             .flatMap { return base.string.nsrange >> $0 }

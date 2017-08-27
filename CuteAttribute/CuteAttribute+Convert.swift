@@ -9,6 +9,10 @@
 import UIKit
 
 public extension CuteAttribute {
+    /// `String`, `NSString`, `NSMutableAttributedString` or `NSAttributedString` to `NSMutableAttributedString`
+    ///
+    /// - Parameter str: Any value.
+    /// - Returns: NSMutableAttributedString
     public static func convertToMutableAttributedString(_ str: Any) -> NSMutableAttributedString {
         let isValid = (str is String)
             || (str is NSString)

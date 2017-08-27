@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// A protocol type for `CuteAttribute`
 public protocol CuteAttributeable {
     associatedtype Attributeable
     var cute: Attributeable { get }
