@@ -33,8 +33,8 @@ Installation
 
 TODO
 ===
-- [ ] Documented.
-- [ ] Example.
+- [x] Documented.
+- [x] Example.
 - [ ] Test.
 - [ ] More convenience.
 
