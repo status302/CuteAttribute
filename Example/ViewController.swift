@@ -34,6 +34,8 @@ class ViewController: UIViewController {
             .green
             .doubleUnderline
             .underlineColor(UIColor.orange)
+            .matchAll()
+            .font(UIFont.systemFont(ofSize: 30))
     }
 }
 
