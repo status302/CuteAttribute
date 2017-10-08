@@ -23,10 +23,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     internal(set) var ranges: [NSRange] {
         get {
             let defaultRange = NSRange(location: 0, length: base.length)
-            return objc_getAssociatedObject(base, CuteAttributeKey.rangesKey) as? [NSRange] ?? [defaultRange]
+            return objc_getAssociatedObject(base, CuteAttributeKey.rangesKey!) as? [NSRange] ?? [defaultRange]
         }
         set {
-            objc_setAssociatedObject(base, CuteAttributeKey.rangesKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(base, CuteAttributeKey.rangesKey!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     
@@ -37,7 +37,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     public func ranges(_ ranges: [NSRange]) -> CuteAttribute<Base> {
         let isValid = ranges
             .flatMap { return base.string.nsrange >> $0 }
-            .reduce(true) { return $0.1 && $0.0 }
+            .reduce(true) { return $1 && $0 }
         assert(isValid, "ranges must in string.")
         self.ranges = ranges
         return self

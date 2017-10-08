@@ -16,7 +16,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Returns: self
     public func color(_ color: UIColor) -> CuteAttribute<Base> {
         ranges.forEach {
-            base.addAttribute(NSForegroundColorAttributeName, value: color, range: $0)
+            base.addAttribute(NSAttributedStringKey.foregroundColor, value: color, range: $0)
         }
         return self
     }
@@ -27,7 +27,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Returns: self
     public func baseline(_ baseline: CGFloat) -> CuteAttribute<Base> {
         ranges.forEach {
-            base.addAttribute(NSBaselineOffsetAttributeName, value: baseline, range: $0)
+            base.addAttribute(NSAttributedStringKey.baselineOffset, value: baseline, range: $0)
         }
         return self
     }
@@ -38,7 +38,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Returns: self
     public func underline(_ underline: NSUnderlineStyle) -> CuteAttribute<Base> {
         ranges.forEach {
-            base.addAttribute(NSUnderlineStyleAttributeName, value: underline.rawValue, range: $0)
+            base.addAttribute(NSAttributedStringKey.underlineStyle, value: underline.rawValue, range: $0)
         }
         return self
     }
@@ -49,7 +49,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Returns: self
     public func underlineColor(_ color: UIColor) -> CuteAttribute<Base> {
         ranges.forEach {
-            base.addAttribute(NSUnderlineColorAttributeName, value: color, range: $0)
+            base.addAttribute(NSAttributedStringKey.underlineColor, value: color, range: $0)
         }
         return self
     }
@@ -61,7 +61,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Returns: self
     public func underline(_ underlineStyle: NSUnderlineStyle, color: UIColor) -> CuteAttribute<Base> {
         ranges.forEach {
-            base.addAttributes([NSUnderlineStyleAttributeName: underlineStyle.rawValue, NSUnderlineColorAttributeName: color], range: $0)
+            base.addAttributes([NSAttributedStringKey.underlineStyle: underlineStyle.rawValue, NSAttributedStringKey.underlineColor: color], range: $0)
         }
         return self
     }
@@ -72,7 +72,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Returns: self
     public func font(_ font: UIFont) -> CuteAttribute<Base> {
         ranges.forEach {
-            base.addAttribute(NSFontAttributeName, value: font, range: $0)
+            base.addAttribute(NSAttributedStringKey.font, value: font, range: $0)
         }
         return self
     }
@@ -84,10 +84,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     public func fontName(_ name: String) -> CuteAttribute<Base> {
         ranges.forEach {
             var _range = $0
-            let exitedFont = base.attribute(NSFontAttributeName, at: 0, effectiveRange: &_range) as? UIFont
+            let exitedFont = base.attribute(NSAttributedStringKey.font, at: 0, effectiveRange: &_range) as? UIFont
             let size = exitedFont?.pointSize ?? 17.0
             let font = UIFont(name: name, size: size) ?? UIFont.systemFont(ofSize: size)
-            base.addAttribute(NSFontAttributeName, value: font, range: $0)
+            base.addAttribute(NSAttributedStringKey.font, value: font, range: $0)
         }
         return self
     }
@@ -98,7 +98,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Returns: self
     public func strikeThrough(_ strike: NSUnderlineStyle) -> CuteAttribute<Base> {
         ranges.forEach {
-            base.addAttribute(NSStrikethroughStyleAttributeName, value: strike.rawValue, range: $0)
+            base.addAttribute(NSAttributedStringKey.strikethroughStyle, value: strike.rawValue, range: $0)
         }
         return self
     }
@@ -109,7 +109,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Returns: self
     public func strikeThroughColor(_ color: UIColor) -> CuteAttribute<Base> {
         ranges.forEach {
-            base.addAttribute(NSStrikethroughColorAttributeName, value: color, range: $0)
+            base.addAttribute(NSAttributedStringKey.strikethroughColor, value: color, range: $0)
         }
         return self
     }
@@ -120,7 +120,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Returns: self
     public func link(_ link: String) -> CuteAttribute<Base> {
         ranges.forEach {
-            base.addAttribute(NSLinkAttributeName, value: link, range: $0)
+            base.addAttribute(NSAttributedStringKey.link, value: link, range: $0)
         }
         return self
     }
@@ -131,7 +131,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Returns: self
     public func ligature(_ ligature: Int) -> CuteAttribute<Base> {
         ranges.forEach {
-            base.addAttribute(NSLigatureAttributeName, value: ligature, range: $0)
+            base.addAttribute(NSAttributedStringKey.ligature, value: ligature, range: $0)
         }
         return self
     }
@@ -142,7 +142,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Returns: self
     public func kern(_ kern: CGFloat) -> CuteAttribute<Base> {
         ranges.forEach {
-            base.addAttribute(NSKernAttributeName, value: kern, range: $0)
+            base.addAttribute(NSAttributedStringKey.kern, value: kern, range: $0)
         }
         return self
     }
@@ -153,7 +153,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Returns: self
     public func strokeColor(_ color: UIColor) -> CuteAttribute<Base> {
         ranges.forEach {
-            base.addAttribute(NSStrokeColorAttributeName, value: color, range: $0)
+            base.addAttribute(NSAttributedStringKey.strokeColor, value: color, range: $0)
         }
         return self
     }
@@ -164,7 +164,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Returns: self
     public func strokeWidth(_ width: CGFloat) -> CuteAttribute<Base> {
         ranges.forEach {
-            base.addAttribute(NSStrokeWidthAttributeName, value: width, range: $0)
+            base.addAttribute(NSAttributedStringKey.strokeWidth, value: width, range: $0)
         }
         return self
     }
@@ -175,7 +175,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Returns: self
     public func shadow(_ shadow: NSShadow) -> CuteAttribute<Base> {
         ranges.forEach {
-            base.addAttribute(NSShadowAttributeName, value: shadow, range: $0)
+            base.addAttribute(NSAttributedStringKey.shadow, value: shadow, range: $0)
         }
         return self
     }
@@ -186,7 +186,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Returns: self
     public func textEffect(_ effect: String) -> CuteAttribute<Base> {
         ranges.forEach {
-            base.addAttribute(NSTextEffectAttributeName, value: effect, range: $0)
+            base.addAttribute(NSAttributedStringKey.textEffect, value: effect, range: $0)
         }
         return self
     }
@@ -197,7 +197,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Returns: self
     public func obliqueness(_ value: CGFloat) -> CuteAttribute<Base>{
         ranges.forEach {
-            base.addAttribute(NSObliquenessAttributeName, value: value, range: $0)
+            base.addAttribute(NSAttributedStringKey.obliqueness, value: value, range: $0)
         }
         return self
     }
@@ -208,7 +208,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Returns: self
     public func expansion(_ value: CGFloat) -> CuteAttribute<Base> {
         ranges.forEach {
-            base.addAttribute(NSExpansionAttributeName, value: value, range: $0)
+            base.addAttribute(NSAttributedStringKey.expansion, value: value, range: $0)
         }
         return self
     }
@@ -219,7 +219,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Returns: self
     public func textAttachment(_ value: NSTextAttachment) -> CuteAttribute<Base> {
         ranges.forEach {
-            base.addAttribute(NSAttachmentAttributeName, value: value, range: $0)
+            base.addAttribute(NSAttributedStringKey.attachment, value: value, range: $0)
         }
         return self
     }
