@@ -29,6 +29,7 @@
 		3F615F631F52F8FD006CFBCB /* UILabel+Cute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F615F531F52F8FD006CFBCB /* UILabel+Cute.swift */; };
 		3F615F641F52F8FD006CFBCB /* UITextField+Cute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F615F541F52F8FD006CFBCB /* UITextField+Cute.swift */; };
 		3F615F651F52F8FD006CFBCB /* UITextView+Cute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F615F551F52F8FD006CFBCB /* UITextView+Cute.swift */; };
+		3F77D3531F8A775900B3ACDA /* CuteAttribute+Tap.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F77D3521F8A775900B3ACDA /* CuteAttribute+Tap.swift */; };
 		3F7D3CBA1F406E6900409657 /* CuteAttribute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7D3CB01F406E6900409657 /* CuteAttribute.framework */; };
 		3F7D3CBF1F406E6900409657 /* CuteAttributeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CBE1F406E6900409657 /* CuteAttributeTests.swift */; };
 		3F9B002E1F41E72C0021CBDD /* CuteAttribute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7D3CB01F406E6900409657 /* CuteAttribute.framework */; };
@@ -95,6 +96,7 @@
 		3F615F531F52F8FD006CFBCB /* UILabel+Cute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Cute.swift"; sourceTree = "<group>"; };
 		3F615F541F52F8FD006CFBCB /* UITextField+Cute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+Cute.swift"; sourceTree = "<group>"; };
 		3F615F551F52F8FD006CFBCB /* UITextView+Cute.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextView+Cute.swift"; sourceTree = "<group>"; };
+		3F77D3521F8A775900B3ACDA /* CuteAttribute+Tap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CuteAttribute+Tap.swift"; sourceTree = "<group>"; };
 		3F7D3CB01F406E6900409657 /* CuteAttribute.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CuteAttribute.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7D3CB91F406E6900409657 /* CuteAttributeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CuteAttributeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7D3CBE1F406E6900409657 /* CuteAttributeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuteAttributeTests.swift; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 				3F615F4B1F52F8FD006CFBCB /* CuteAttribute+Match.swift */,
 				3F615F4C1F52F8FD006CFBCB /* CuteAttribute+NSRange.swift */,
 				3F615F4D1F52F8FD006CFBCB /* CuteAttribute+Underline.swift */,
+				3F77D3521F8A775900B3ACDA /* CuteAttribute+Tap.swift */,
 				3F615F4E1F52F8FD006CFBCB /* CuteAttributeKeys.swift */,
 				3F615F4F1F52F8FD006CFBCB /* DataDetectorHelper.swift */,
 				3F615F501F52F8FD006CFBCB /* RegexHelper.swift */,
@@ -365,6 +368,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F615F5E1F52F8FD006CFBCB /* CuteAttributeKeys.swift in Sources */,
+				3F77D3531F8A775900B3ACDA /* CuteAttribute+Tap.swift in Sources */,
 				3F615F5F1F52F8FD006CFBCB /* DataDetectorHelper.swift in Sources */,
 				3F615F561F52F8FD006CFBCB /* CuteAttribute.swift in Sources */,
 				3F615F631F52F8FD006CFBCB /* UILabel+Cute.swift in Sources */,
