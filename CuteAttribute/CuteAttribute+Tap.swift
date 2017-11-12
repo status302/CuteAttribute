@@ -20,21 +20,25 @@ public enum CuteAttributeTapCustom {
 }
 
 extension CuteAttribute where Base: NSMutableAttributedString {
-    func tap(_ type: CuteAttributeTapType) -> CuteAttribute<Base> {
+    
+    /// Set tap action for `UILabel`.
+    ///
+    /// - Parameter type: CuteAttributeTapType without default value.
+    /// - Returns: self
+    public func tap(_ type: CuteAttributeTapType) -> CuteAttribute<Base> {
         switch type {
         case .link:
-            tapRanges = rangesFrom(checkingType: .link)
+            self.tapRanges = rangesFrom(checkingType: .link)
         case .phoneNumber:
-            tapRanges = rangesFrom(checkingType: .phoneNumber)
+            self.tapRanges = rangesFrom(checkingType: .phoneNumber)
         case .custom(let tapCustom):
             switch tapCustom {
             case .origin(let originString):
-                tapRanges = rangeFrom(string: originString)
+                self.tapRanges = rangeFrom(string: originString)
             case .regex(let regexString):
-                tapRanges = rangesFrom(regex: regexString)
+                self.tapRanges = rangesFrom(regex: regexString)
             }
         }
-        
         return self
     }
     
@@ -75,7 +79,6 @@ extension CuteAttribute where Base: NSMutableAttributedString {
             return []
         }
     }
-    
     
     internal var tapRanges: [NSRange] {
         get {

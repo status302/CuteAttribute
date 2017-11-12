@@ -11,12 +11,13 @@ import UIKit
 extension UITextView: CuteAttributeable { }
 
 public extension CuteAttribute where Base: UITextView {
-    public var attributedText: CuteAttribute<NSMutableAttributedString> {
+    public var attributedText: CuteAttribute<NSMutableAttributedString>? {
         set {
-            base.attributedText = newValue.attributedString
+            base.attributedText = newValue?.attributedString
+            base._cuteAttribute = newValue
         }
         get {
-            return base.attributedText.cute
+            return base._cuteAttribute
         }
     }
 }

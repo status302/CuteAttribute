@@ -14,4 +14,6 @@ internal struct CuteAttributeKey {
     static let fromKey = UnsafeRawPointer(bitPattern: "fromKey".hashValue)
     
     static let tapRangesKey = UnsafeRawPointer(bitPattern: "tapRangesKey".hashValue)
+    
+    static let labelCuteKey = UnsafeRawPointer(bitPattern: "labelCuteKey".hashValue)
 }

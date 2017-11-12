@@ -15,6 +15,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var textView: UITextView!
     
+    @IBOutlet weak var testLabel: TapableLabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,6 +38,29 @@ class ViewController: UIViewController {
             .underlineColor(UIColor.orange)
             .matchAll()
             .font(UIFont.systemFont(ofSize: 30))
+        
+        let cuteAttr = "请点击该链接：https://vsccw.com，😆😆😆😆😆😆"
+            .cute
+            .matchAllURL()
+            .color(UIColor.red)
+            .tap(CuteAttributeTapType.link)
+        
+        testLabel.cute.attributedText = cuteAttr
+        
+        testLabel.delegate = self
+    }
+    
+    private func showAlertController(_ message: String?) {
+        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "我知道啦", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+}
+
+extension ViewController: TapableLabelDelegate {
+    
+    func tapableLabel(_ label: TapableLabel, didTap range: NSRange, text: String?) {
+        showAlertController(text)
     }
 }
 

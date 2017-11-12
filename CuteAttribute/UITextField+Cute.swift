@@ -14,9 +14,10 @@ public extension CuteAttribute where Base: UITextField {
     public var attributedText: CuteAttribute<NSMutableAttributedString>? {
         set {
             base.attributedText = newValue?.attributedString
+            base._cuteAttribute = newValue
         }
         get {
-            return base.attributedText?.cute
+            return base._cuteAttribute
         }
     }
 }

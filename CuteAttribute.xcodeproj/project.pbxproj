@@ -34,6 +34,8 @@
 		3F7D3CBF1F406E6900409657 /* CuteAttributeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F7D3CBE1F406E6900409657 /* CuteAttributeTests.swift */; };
 		3F9B002E1F41E72C0021CBDD /* CuteAttribute.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7D3CB01F406E6900409657 /* CuteAttribute.framework */; };
 		3F9B002F1F41E72C0021CBDD /* CuteAttribute.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3F7D3CB01F406E6900409657 /* CuteAttribute.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3FF121E91FB887B700D8DD09 /* TapableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF121E81FB887B700D8DD09 /* TapableLabel.swift */; };
+		3FF121EB1FB8936900D8DD09 /* UIView+Cute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FF121EA1FB8936900D8DD09 /* UIView+Cute.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +103,8 @@
 		3F7D3CB91F406E6900409657 /* CuteAttributeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CuteAttributeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F7D3CBE1F406E6900409657 /* CuteAttributeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuteAttributeTests.swift; sourceTree = "<group>"; };
 		3F7D3CC01F406E6900409657 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FF121E81FB887B700D8DD09 /* TapableLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapableLabel.swift; sourceTree = "<group>"; };
+		3FF121EA1FB8936900D8DD09 /* UIView+Cute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Cute.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,8 +172,10 @@
 			isa = PBXGroup;
 			children = (
 				3F615F531F52F8FD006CFBCB /* UILabel+Cute.swift */,
+				3FF121E81FB887B700D8DD09 /* TapableLabel.swift */,
 				3F615F541F52F8FD006CFBCB /* UITextField+Cute.swift */,
 				3F615F551F52F8FD006CFBCB /* UITextView+Cute.swift */,
+				3FF121EA1FB8936900D8DD09 /* UIView+Cute.swift */,
 			);
 			name = UIKit;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 				3F615F561F52F8FD006CFBCB /* CuteAttribute.swift in Sources */,
 				3F615F631F52F8FD006CFBCB /* UILabel+Cute.swift in Sources */,
 				3F615F571F52F8FD006CFBCB /* CuteAttribute+append.swift in Sources */,
+				3FF121E91FB887B700D8DD09 /* TapableLabel.swift in Sources */,
 				3F615F581F52F8FD006CFBCB /* CuteAttribute+Attributes.swift in Sources */,
 				3F615F641F52F8FD006CFBCB /* UITextField+Cute.swift in Sources */,
 				3F615F5A1F52F8FD006CFBCB /* CuteAttribute+Convert.swift in Sources */,
@@ -384,6 +391,7 @@
 				3F615F601F52F8FD006CFBCB /* RegexHelper.swift in Sources */,
 				3F615F611F52F8FD006CFBCB /* String+Cute.swift in Sources */,
 				3F615F621F52F8FD006CFBCB /* UIColor+Cute.swift in Sources */,
+				3FF121EB1FB8936900D8DD09 /* UIView+Cute.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
