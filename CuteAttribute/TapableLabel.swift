@@ -49,9 +49,9 @@ open class TapableLabel: UILabel {
         guard let tappedRange = didTapRangeOfLink(inRanges: tapRanges, tapLocation: location) else { return }
         tappingRange = tappedRange
         highlight = labelHighlight
-        previousAttributes = Box(_cuteAttribute)
-        cute.attributedText = _cuteAttribute?
-            .color(labelHighlight.backgroundColor)
+//        previousAttributes = Box(_cuteAttribute)
+//        cute.attributedText = _cuteAttribute?
+//            .color(labelHighlight.backgroundColor)
     }
     
     open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -60,8 +60,8 @@ open class TapableLabel: UILabel {
     
     open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
-        if let tappingRange = self.tappingRange, let previousAttributes = self.previousAttributes {
-            cute.attributedText = previousAttributes.value
+        if let tappingRange = self.tappingRange {
+//            cute.attributedText = previousAttributes.value
             delegate?.tapableLabel(self, didTap: tappingRange, text: text?.nsstring.substring(with: tappingRange))
         }
         tappingRange = nil
