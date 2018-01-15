@@ -14,7 +14,7 @@ public protocol CuteAttributeable {
     var cute: Attributeable { get }
 }
 
-public final class CuteAttribute<Base> {
+public final class CuteAttribute<Base>: NSObject {
     public let base: Base
     public init(_ base: Base) {
         self.base = base
@@ -32,5 +32,9 @@ extension NSMutableAttributedString: CuteAttributeable { }
 public extension CuteAttribute where Base: NSMutableAttributedString {
     public var attributedString: NSMutableAttributedString {
         return base
+    }
+    
+    public var copy: CuteAttribute<NSMutableAttributedString> {
+        return type(of: self).init(base) as! CuteAttribute<NSMutableAttributedString>
     }
 }

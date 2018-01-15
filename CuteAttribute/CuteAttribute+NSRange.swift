@@ -23,10 +23,12 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     internal(set) var ranges: [NSRange] {
         get {
             let defaultRange = NSRange(location: 0, length: base.length)
-            return objc_getAssociatedObject(base, CuteAttributeKey.rangesKey!) as? [NSRange] ?? [defaultRange]
+            let value = (objc_getAssociatedObject(base, CuteAttributeKey.rangesKey) as? Box<[NSRange]>)?.value
+            return value ?? [defaultRange]
         }
         set {
-            objc_setAssociatedObject(base, CuteAttributeKey.rangesKey!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            let value = Box(newValue)
+            objc_setAssociatedObject(base, CuteAttributeKey.rangesKey, value, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
     

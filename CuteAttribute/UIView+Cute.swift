@@ -11,10 +11,10 @@ import UIKit
 extension UIView {
     internal var _cuteAttribute: CuteAttribute<NSMutableAttributedString>? {
         set {
-            objc_setAssociatedObject(self, CuteAttributeKey.labelCuteKey!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, CuteAttributeKey.viewCuteKey, Box(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
         get {
-            return objc_getAssociatedObject(self, CuteAttributeKey.labelCuteKey!) as? CuteAttribute<NSMutableAttributedString>
+            return (objc_getAssociatedObject(self, CuteAttributeKey.viewCuteKey) as? Box<CuteAttribute<NSMutableAttributedString>?>)?.value
         }
     }
 }

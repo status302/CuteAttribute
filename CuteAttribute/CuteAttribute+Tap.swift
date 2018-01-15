@@ -42,6 +42,13 @@ extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
     
+    
+    //TODO: add highlighted state
+    public func highlight(_ highlight: CuteHighlight) -> CuteAttribute<Base> {
+        self.labelHighlight = highlight
+        return self
+    }
+    
     internal func rangesFrom(checkingType: NSTextCheckingResult.CheckingType) -> [NSRange] {
         do {
             let dataHelper = try DataDetectorHelper(types: checkingType.rawValue)
@@ -82,11 +89,21 @@ extension CuteAttribute where Base: NSMutableAttributedString {
     
     internal var tapRanges: [NSRange] {
         get {
-            let ranges = objc_getAssociatedObject(base, CuteAttributeKey.tapRangesKey!) as? [NSRange]
-            return ranges ?? []
+            let value = (objc_getAssociatedObject(base, CuteAttributeKey.tapRangesKey) as? Box<[NSRange]>)?.value
+            return value ?? []
         }
         set {
-            objc_setAssociatedObject(base, CuteAttributeKey.tapRangesKey!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(base, CuteAttributeKey.tapRangesKey, Box(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
+    }
+    
+    internal var labelHighlight: CuteHighlight? {
+        get {
+            return (objc_getAssociatedObject(base, CuteAttributeKey.highlightKey) as? Box<CuteHighlight?>)?.value
+        }
+        
+        set {
+            objc_setAssociatedObject(base, CuteAttributeKey.highlightKey, Box(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 }

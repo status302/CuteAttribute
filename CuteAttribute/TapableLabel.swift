@@ -19,30 +19,62 @@ open class TapableLabel: UILabel {
     
     public weak var delegate: TapableLabelDelegate?
     
+    
+    private var tappingRange: NSRange?
+    private var highlight: CuteHighlight?
+    private var previousAttributes: Box<CuteAttribute<NSMutableAttributedString>?>?
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         commitInit()
-        print(3)
     }
     
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         commitInit()
-        print(2)
     }
     
     open override func awakeFromNib() {
         super.awakeFromNib()
         commitInit()
-        print(1)
+    }
+    
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        guard let touch = touches.first,
+            let labelHighlight = _cuteAttribute?.labelHighlight else { return }
+        let location = touch.location(in: self)
+        guard bounds.contains(location) else { return }
+        guard let tapRanges = cute.attributedText?.tapRanges else { return }
+        guard let tappedRange = didTapRangeOfLink(inRanges: tapRanges, tapLocation: location) else { return }
+        tappingRange = tappedRange
+        highlight = labelHighlight
+        previousAttributes = Box(_cuteAttribute)
+        cute.attributedText = _cuteAttribute?
+            .color(labelHighlight.backgroundColor)
+    }
+    
+    open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
+    }
+    
+    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesEnded(touches, with: event)
+        if let tappingRange = self.tappingRange, let previousAttributes = self.previousAttributes {
+            cute.attributedText = previousAttributes.value
+            delegate?.tapableLabel(self, didTap: tappingRange, text: text?.nsstring.substring(with: tappingRange))
+        }
+        tappingRange = nil
+        highlight = nil
+        previousAttributes = nil
+    }
+    
+    open override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesCancelled(touches, with: event)
     }
     
     internal func commitInit() {
         isUserInteractionEnabled = true
-        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTapGesture(_:)))
-        tapGesture.numberOfTapsRequired = 1
-        tapGesture.numberOfTouchesRequired = 1
-        addGestureRecognizer(tapGesture)
     }
     
     @objc private func handleTapGesture(_ tap: UITapGestureRecognizer) {
@@ -84,7 +116,6 @@ extension TapableLabel {
                                                       fractionOfDistanceThroughGlyph: nil)
         let glyphRect = layoutManager.boundingRect(forGlyphRange: NSRange(location: characterIndex, length: 1),
                                                    in: textContainer)
-        
         return ranges.filter { glyphRect.contains(tapLocation) && NSLocationInRange(characterIndex, $0) }.first
     }
 }

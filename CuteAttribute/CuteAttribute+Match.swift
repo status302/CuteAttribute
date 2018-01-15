@@ -125,10 +125,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     
     internal var from: Int {
         set {
-            objc_setAssociatedObject(base, CuteAttributeKey.fromKey!, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(base, CuteAttributeKey.fromKey, Box(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
         get {
-            return objc_getAssociatedObject(base, CuteAttributeKey.fromKey!) as? Int ?? 0
+            return (objc_getAssociatedObject(base, CuteAttributeKey.fromKey) as? Box<Int>)?.value ?? 0
         }
     }
 }

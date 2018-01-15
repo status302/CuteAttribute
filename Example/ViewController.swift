@@ -11,7 +11,7 @@ import CuteAttribute
 
 class ViewController: UIViewController {
     
-    let text = "iOS 11 sets a new standard for the world’s most advanced mobile operating system. Your apps can now become more intelligent using the power of machine learning with Core ML. You can create incredible augmented reality experiences with ARKit. And you can deliver a more unified and immersive user experience with new multitasking features, including drag and drop for iPad, the new Files app, new camera APIs, new SiriKit domains, Apple Music integration, and more. 18829214288 https://vsccw.com Apple 1 Infinite Loop Cupertino, CA 95014 408-996–1010"
+    let text = "我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线"
 
     @IBOutlet weak var textView: UITextView!
     
@@ -26,24 +26,26 @@ class ViewController: UIViewController {
             .yellow
             .matchAllPhoneNumber()
             .rgbColor(0x880011)
-            .underline(NSUnderlineStyle.styleSingle)
-            .underlineColor(UIColor.gray)
+            .underline(.styleSingle)
+            .underlineColor(.gray)
             .matchAllURL()
             .red
             .singleUnderline
-            .underlineColor(UIColor.blue)
-            .match(string: "Apple")
+            .underlineColor(.blue)
+            .matchAllDate()
             .green
             .doubleUnderline
-            .underlineColor(UIColor.orange)
+            .underlineColor(.orange)
             .matchAll()
             .font(UIFont.systemFont(ofSize: 30))
         
         let cuteAttr = "请点击该链接：https://vsccw.com，😆😆😆😆😆😆"
             .cute
             .matchAllURL()
-            .color(UIColor.red)
-            .tap(CuteAttributeTapType.link)
+            .color(.red)
+            .underline(.styleSingle)
+            .tap(.link)
+            .highlight(CuteHighlight(textColor: UIColor.black, backgroundColor: UIColor.gray))
         
         testLabel.cute.attributedText = cuteAttr
         
