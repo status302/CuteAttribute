@@ -9,8 +9,9 @@
 import UIKit
 
 public extension CuteAttribute where Base: NSMutableAttributedString {
-    
-    /// Set color for `NSForegroundColorAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+
+    /// Set color for `NSForegroundColorAttributeName`,
+    /// this can be called after `range(_:)`, or not the range is default all the string.
     ///
     /// - Parameter color: UIColor type without default value.
     /// - Returns: self
@@ -20,8 +21,9 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
         return self
     }
-    
-    /// Set baseline for `NSBaselineOffsetAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+
+    /// Set baseline for `NSBaselineOffsetAttributeName`,
+    /// this can be called after `range(_:)`, or not the range is default all the string.
     ///
     /// - Parameter baseline: CGFloat type without default value.
     /// - Returns: self
@@ -31,8 +33,9 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
         return self
     }
-    
-    /// Set underline for `NSUnderlineStyleAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+
+    /// Set underline for `NSUnderlineStyleAttributeName`,
+    /// this can be called after `range(_:)`, or not the range is default all the string.
     ///
     /// - Parameter underline: NSUnderlineStyle type without default value.
     /// - Returns: self
@@ -42,8 +45,9 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
         return self
     }
-    
-    /// Set underlineColor for `NSUnderlineColorAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+
+    /// Set underlineColor for `NSUnderlineColorAttributeName`,
+    /// this can be called after `range(_:)`, or not the range is default all the string.
     ///
     /// - Parameter color: UIColor type without default value.
     /// - Returns: self
@@ -53,8 +57,9 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
         return self
     }
-    
-    /// Set underlineStyle for `NSUnderlineStyleAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+
+    /// Set underlineStyle for `NSUnderlineStyleAttributeName`,
+    /// this can be called after `range(_:)`, or not the range is default all the string.
     ///
     /// - Parameter underlineStyle: NSUnderlineStyle type without default value.
     /// - Parameter color: UIColor type without default value.
@@ -65,8 +70,9 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
         return self
     }
-    
-    /// Set font for `NSFontAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+
+    /// Set font for `NSFontAttributeName`,
+    /// this can be called after `range(_:)`, or not the range is default all the string.
     ///
     /// - Parameter font: UIFont type without default value.
     /// - Returns: self
@@ -76,23 +82,25 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
         return self
     }
-    
-    /// Set fontName for `NSFontAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+
+    /// Set fontName for `NSFontAttributeName`,
+    /// this can be called after `range(_:)`, or not the range is default all the string.
     ///
     /// - Parameter name: String type without default value.
     /// - Returns: self
     public func fontName(_ name: String) -> CuteAttribute<Base> {
         ranges.forEach {
-            var _range = $0
-            let exitedFont = base.attribute(.font, at: 0, effectiveRange: &_range) as? UIFont
+            var mRange = $0
+            let exitedFont = base.attribute(.font, at: 0, effectiveRange: &mRange) as? UIFont
             let size = exitedFont?.pointSize ?? 17.0
             let font = UIFont(name: name, size: size) ?? UIFont.systemFont(ofSize: size)
             base.addAttribute(.font, value: font, range: $0)
         }
         return self
     }
-    
-    /// Set strikeThrough for `NSStrikethroughStyleAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+
+    /// Set strikeThrough for `NSStrikethroughStyleAttributeName`,
+    /// this can be called after `range(_:)`, or not the range is default all the string.
     ///
     /// - Parameter strike: NSUnderlineStyle type without default value.
     /// - Returns: self
@@ -102,8 +110,9 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
         return self
     }
-    
-    /// Set strikeThroughColor for `NSStrikethroughColorAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+
+    /// Set strikeThroughColor for `NSStrikethroughColorAttributeName`,
+    /// this can be called after `range(_:)`, or not the range is default all the string.
     ///
     /// - Parameter color: UIColor type without default value.
     /// - Returns: self
@@ -113,8 +122,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
         return self
     }
-    
-    /// Set link for `NSLinkAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+
+    /// Set link for `NSLinkAttributeName`,
+    /// this can be called after `range(_:)`,
+    /// or not the range is default all the string.
     ///
     /// - Parameter link: String type without default value.
     /// - Returns: self
@@ -124,8 +135,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
         return self
     }
-    
-    /// Set ligature for `NSLigatureAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+
+    /// Set ligature for `NSLigatureAttributeName`,
+    /// this can be called after `range(_:)`,
+    /// or not the range is default all the string.
     ///
     /// - Parameter ligature: Int type without default value.
     /// - Returns: self
@@ -135,8 +148,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
         return self
     }
-    
-    /// Set kern for `NSKernAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+
+    /// Set kern for `NSKernAttributeName`,
+    /// this can be called after `range(_:)`,
+    /// or not the range is default all the string.
     ///
     /// - Parameter kern: CGFloat type without default value.
     /// - Returns: self
@@ -146,8 +161,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
         return self
     }
-    
-    /// Set strokeColor for `NSStrokeColorAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+
+    /// Set strokeColor for `NSStrokeColorAttributeName`,
+    /// this can be called after `range(_:)`,
+    /// or not the range is default all the string.
     ///
     /// - Parameter color: UIColor type without default value.
     /// - Returns: self
@@ -157,8 +174,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
         return self
     }
-    
-    /// Set strokeWidth for `NSStrokeWidthAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+
+    /// Set strokeWidth for `NSStrokeWidthAttributeName`,
+    /// this can be called after `range(_:)`,
+    /// or not the range is default all the string.
     ///
     /// - Parameter width: CGFloat type without default value.
     /// - Returns: self
@@ -168,8 +187,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
         return self
     }
-    
-    /// Set shadow for `NSShadowAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+
+    /// Set shadow for `NSShadowAttributeName`,
+    /// this can be called after `range(_:)`,
+    /// or not the range is default all the string.
     ///
     /// - Parameter shadow: NSShadow type without default value.
     /// - Returns: self
@@ -179,8 +200,10 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
         return self
     }
-    
-    /// Set textEffect for `NSTextEffectAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+
+    /// Set textEffect for `NSTextEffectAttributeName`,
+    /// this can be called after `range(_:)`,
+    /// or not the range is default all the string.
     ///
     /// - Parameter effect: String type without default value.
     /// - Returns: self
@@ -190,19 +213,23 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
         return self
     }
-    
-    /// Set obliqueness for `NSObliquenessAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+
+    /// Set obliqueness for `NSObliquenessAttributeName`,
+    /// this can be called after `range(_:)`,
+    /// or not the range is default all the string.
     ///
     /// - Parameter value: CGFloat type without default value.
     /// - Returns: self
-    public func obliqueness(_ value: CGFloat) -> CuteAttribute<Base>{
+    public func obliqueness(_ value: CGFloat) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.obliqueness, value: value, range: $0)
         }
         return self
     }
-    
-    /// Set expansion for `NSExpansionAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+
+    /// Set expansion for `NSExpansionAttributeName`,
+    /// this can be called after `range(_:)`,
+    /// or not the range is default all the string.
     ///
     /// - Parameter value: CGFloat type without default value.
     /// - Returns: self
@@ -212,8 +239,9 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
         return self
     }
-    
-    /// Set textAttachment for `NSAttachmentAttributeName`, this can be called after `range(_:)`, or not the range is default all the string.
+
+    /// Set textAttachment for `NSAttachmentAttributeName`,
+    /// this can be called after `range(_:)`, or not the range is default all the string.
     ///
     /// - Parameter value: NSTextAttachment type without default value.
     /// - Returns: self

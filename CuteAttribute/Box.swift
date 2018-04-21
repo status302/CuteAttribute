@@ -9,7 +9,7 @@
 import Foundation
 
 class Box<V> {
-    
+
     let value: V
     init(_ value: V) {
         self.value = value

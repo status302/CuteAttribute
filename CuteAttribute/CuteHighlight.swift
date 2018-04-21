@@ -9,10 +9,8 @@
 import UIKit
 
 public struct CuteHighlight {
-    
     public let textColor: UIColor
     public let backgroundColor: UIColor
-    
     public init(textColor: UIColor, backgroundColor: UIColor) {
         self.textColor = textColor
         self.backgroundColor = backgroundColor

@@ -20,7 +20,7 @@ public enum CuteAttributeTapCustom {
 }
 
 extension CuteAttribute where Base: NSMutableAttributedString {
-    
+
     /// Set tap action for `UILabel`.
     ///
     /// - Parameter type: CuteAttributeTapType without default value.
@@ -36,29 +36,27 @@ extension CuteAttribute where Base: NSMutableAttributedString {
             case .origin(let originString):
                 self.tapRanges = rangeFrom(string: originString)
             case .regex(let regexString):
-                self.tapRanges = rangesFrom(regex: regexString)
+                self.tapRanges = rangesFrom(string: regexString)
             }
         }
         return self
     }
-    
-    
-    //TODO: add highlighted state
+
+    // TODO: add highlighted state
     public func highlight(_ highlight: CuteHighlight) -> CuteAttribute<Base> {
         self.labelHighlight = highlight
         return self
     }
-    
+
     internal func rangesFrom(checkingType: NSTextCheckingResult.CheckingType) -> [NSRange] {
         do {
             let dataHelper = try DataDetectorHelper(types: checkingType.rawValue)
             return dataHelper.matches(string: base.string)
-        }
-        catch {
+        } catch {
             return []
         }
     }
-    
+
     internal func rangeFrom(string str: String) -> [NSRange] {
         var range = base.string.range(substring: str)
         var tapRanges: [NSRange] = []
@@ -67,7 +65,7 @@ extension CuteAttribute where Base: NSMutableAttributedString {
         repeat {
             let location = range.location + range.length
             let length = base.string.length - location
-            let allRange = NSMakeRange(location, length)
+            let allRange = NSRange(location: location, length: length)
             range = base.string.range(substring: str, options: [], range: allRange)
             if range.length == 0 || range.location == NSNotFound {
                 break
@@ -76,34 +74,40 @@ extension CuteAttribute where Base: NSMutableAttributedString {
         } while true
         return tapRanges
     }
-    
-    internal func rangesFrom(regex re: String) -> [NSRange] {
+
+    internal func rangesFrom(string: String) -> [NSRange] {
         do {
-            let regex = try RegexHelper(pattern: re)
+            let regex = try RegexHelper(pattern: string)
             return regex.matchs(input: base.string)
-        }
-        catch {
+        } catch {
             return []
         }
     }
-    
+
     internal var tapRanges: [NSRange] {
         get {
-            let value = (objc_getAssociatedObject(base, CuteAttributeKey.tapRangesKey) as? Box<[NSRange]>)?.value
+            let value = (objc_getAssociatedObject(base, CuteAttributeKey.tapRangesKey)
+                as? Box<[NSRange]>)?.value
             return value ?? []
         }
         set {
-            objc_setAssociatedObject(base, CuteAttributeKey.tapRangesKey, Box(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(base,
+                                     CuteAttributeKey.tapRangesKey,
+                                     Box(newValue),
+                                     .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
-    
+
     internal var labelHighlight: CuteHighlight? {
         get {
             return (objc_getAssociatedObject(base, CuteAttributeKey.highlightKey) as? Box<CuteHighlight?>)?.value
         }
-        
+
         set {
-            objc_setAssociatedObject(base, CuteAttributeKey.highlightKey, Box(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(base,
+                                     CuteAttributeKey.highlightKey,
+                                     Box(newValue),
+                                     .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
 }

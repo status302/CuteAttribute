@@ -10,20 +10,26 @@ import UIKit
 import CuteAttribute
 
 class ViewController: UIViewController {
-    
-    let text = "我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线我是一条线"
+    let text = """
+              hello world,
+              17600636630
+              2018-04-21 18:03:48
+              https://blog.vsccw.com
+              """
 
     @IBOutlet weak var textView: UITextView!
-    
+
     @IBOutlet weak var testLabel: TapableLabel!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        let dateFont = UIFont(name: "Menlo", size: 24) ?? UIFont.systemFont(ofSize: 24)
         textView.cute.attributedText = text.cute
             .from(0)
             .to(10)
-            .yellow
+            .blue
+            .font(UIFont.systemFont(ofSize: 40))
             .matchAllPhoneNumber()
             .rgbColor(0x880011)
             .underline(.styleSingle)
@@ -36,9 +42,7 @@ class ViewController: UIViewController {
             .green
             .doubleUnderline
             .underlineColor(.orange)
-            .matchAll()
-            .font(UIFont.systemFont(ofSize: 30))
-        
+            .font(dateFont)
         let cuteAttr = "请点击该链接：https://vsccw.com，😆😆😆😆😆😆"
             .cute
             .matchAllURL()
@@ -46,12 +50,12 @@ class ViewController: UIViewController {
             .underline(.styleSingle)
             .tap(.link)
             .highlight(CuteHighlight(textColor: UIColor.black, backgroundColor: UIColor.gray))
-        
+
         testLabel.cute.attributedText = cuteAttr
-        
+
         testLabel.delegate = self
     }
-    
+
     private func showAlertController(_ message: String?) {
         let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "我知道啦", style: .default, handler: nil))
@@ -60,9 +64,8 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: TapableLabelDelegate {
-    
+
     func tapableLabel(_ label: TapableLabel, didTap range: NSRange, text: String?) {
         showAlertController(text)
     }
 }
-

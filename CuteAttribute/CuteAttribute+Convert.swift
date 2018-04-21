@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol StringProtocol {
+
+}
+
 public extension CuteAttribute {
     /// `String`, `NSString`, `NSMutableAttributedString` or `NSAttributedString` to `NSMutableAttributedString`
     ///
@@ -18,20 +22,19 @@ public extension CuteAttribute {
             || (str is NSString)
             || (str is NSAttributedString)
             || (str is NSMutableAttributedString)
-        
+
         assert(isValid, "only support `String`, `NSString`, `NSAttributedString`, `NSMutableAttributedString`.")
-        
-        if str is NSMutableAttributedString {
-            return str as! NSMutableAttributedString
-        }
-        else if str is NSAttributedString {
-            return NSMutableAttributedString(attributedString: str as! NSAttributedString)
-        }
-        else if str is NSString {
-            return NSMutableAttributedString(string: (str as! NSString).string)
-        }
-        else {
-            return NSMutableAttributedString(string: str as! String)
+
+        if let attribuedString = str as? NSMutableAttributedString {
+            return attribuedString
+        } else if let attribuedString = str as? NSAttributedString {
+            return NSMutableAttributedString(attributedString: attribuedString)
+        } else if let string = str as? NSString {
+            return NSMutableAttributedString(string: string as String)
+        } else if let string = str as? String {
+            return NSMutableAttributedString(string: string)
+        } else {
+            return NSMutableAttributedString(string: "")
         }
     }
 }
