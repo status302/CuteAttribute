@@ -9,10 +9,9 @@
 import UIKit
 
 public struct CuteHighlight {
+    public static let `default` = CuteHighlight(textColor: .gray)
     public let textColor: UIColor
-    public let backgroundColor: UIColor
-    public init(textColor: UIColor, backgroundColor: UIColor) {
+    public init(textColor: UIColor) {
         self.textColor = textColor
-        self.backgroundColor = backgroundColor
     }
 }

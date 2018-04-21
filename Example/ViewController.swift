@@ -43,13 +43,15 @@ class ViewController: UIViewController {
             .doubleUnderline
             .underlineColor(.orange)
             .font(dateFont)
-        let cuteAttr = "请点击该链接：https://vsccw.com，😆😆😆😆😆😆"
+        let cuteAttr = "请点击该链接：https://vsccw.com，17600636630😆😆😆😆😆😆"
             .cute
             .matchAllURL()
             .color(.red)
             .underline(.styleSingle)
             .tap(.link)
-            .highlight(CuteHighlight(textColor: UIColor.black, backgroundColor: UIColor.gray))
+            .highlight(.default)
+            .tap(.phoneNumber)
+            .highlight(.default)
 
         testLabel.cute.attributedText = cuteAttr
 
@@ -57,7 +59,7 @@ class ViewController: UIViewController {
     }
 
     private func showAlertController(_ message: String?) {
-        let alertController = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "你点击了", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "我知道啦", style: .default, handler: nil))
         present(alertController, animated: true, completion: nil)
     }

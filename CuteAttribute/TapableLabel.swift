@@ -40,15 +40,21 @@ open class TapableLabel: UILabel {
 
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesBegan(touches, with: event)
-        guard let touch = touches.first,
-            let labelHighlight = internalCuteAttribute?.labelHighlight
-            else { return }
+        guard let touch = touches.first else { return }
         let location = touch.location(in: self)
         guard bounds.contains(location) else { return }
         guard let tapRanges = cute.attributedText?.tapRanges else { return }
         guard let tappedRange = didTapRangeOfLink(inRanges: tapRanges, tapLocation: location) else { return }
         tappingRange = tappedRange
-        highlight = labelHighlight
+        let attriubes = attributedText?.attributes(at: tappedRange.location,
+                                                   longestEffectiveRange: nil,
+                                                   in: tappedRange)
+        let attributedColor = attriubes?[NSAttributedStringKey.foregroundColor] as? UIColor
+        highlight = CuteHighlight(textColor: attributedColor ?? textColor)
+        let highlightColor = cute.attributedText?.labelHighlight?.textColor ?? CuteHighlight.default.textColor
+        cute.attributedText = cute.attributedText?
+            .match(range: tappedRange)
+            .color(highlightColor)
     }
 
     open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -61,7 +67,12 @@ open class TapableLabel: UILabel {
             delegate?.tapableLabel(self,
                                    didTap: tappingRange,
                                    text: text?.nsstring.substring(with: tappingRange))
+            let textColor = highlight?.textColor ?? .clear
+            cute.attributedText = cute.attributedText?
+                .match(range: tappingRange)
+                .color(textColor)
         }
+
         tappingRange = nil
         highlight = nil
         previousAttributes = nil

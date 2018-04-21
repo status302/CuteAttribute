@@ -26,24 +26,34 @@ extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Parameter type: CuteAttributeTapType without default value.
     /// - Returns: self
     public func tap(_ type: CuteAttributeTapType) -> CuteAttribute<Base> {
+        let tapRanges: [NSRange]
         switch type {
         case .link:
-            self.tapRanges = rangesFrom(checkingType: .link)
+            tapRanges = rangesFrom(checkingType: .link)
         case .phoneNumber:
-            self.tapRanges = rangesFrom(checkingType: .phoneNumber)
+            tapRanges = rangesFrom(checkingType: .phoneNumber)
         case .custom(let tapCustom):
             switch tapCustom {
             case .origin(let originString):
-                self.tapRanges = rangeFrom(string: originString)
+                tapRanges = rangeFrom(string: originString)
             case .regex(let regexString):
-                self.tapRanges = rangesFrom(string: regexString)
+                tapRanges = rangesFrom(string: regexString)
             }
         }
+        if self.tapRanges.isEmpty {
+            self.tapRanges = tapRanges
+        } else {
+            self.tapRanges.append(contentsOf: tapRanges)
+        }
+
         return self
     }
 
-    // TODO: add highlighted state
-    public func highlight(_ highlight: CuteHighlight) -> CuteAttribute<Base> {
+    /// Set highlight textColor for `UILabel`.
+    ///
+    /// - Parameter highlight: CuteHighlight , default value is `UIColor.gray`.
+    /// - Returns: self
+    public func highlight(_ highlight: CuteHighlight = .default) -> CuteAttribute<Base> {
         self.labelHighlight = highlight
         return self
     }
