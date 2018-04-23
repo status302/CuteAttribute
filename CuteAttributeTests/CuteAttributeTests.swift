@@ -45,6 +45,7 @@ class CuteAttributeTests: XCTestCase {
         let msg = "attributedString1 should equal to attributedString2."
         XCTAssert(attributedString1.isEqual(to: attributedString2), msg)
     }
+
     func testAttributed() {
         let cute = text.cute
         let attributedString1 = cute

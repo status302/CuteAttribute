@@ -6,15 +6,24 @@
 //  Copyright © 2017年 https://vsccw.com. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-public enum CuteAttributeTapType {
+/// the tap type matched when you want to use `TapableLabel`.
+///
+/// - link: url link match, eg: `https://blog.vsccw.com`
+/// - phoneNumber: phone number match, eg: `+8617600636630`
+/// - custom: custom string match, including regux and origin string, eg: `vsccw`, `^[A-Za-z]+$`.
+public enum TapType {
     case link
     case phoneNumber
-    case custom(CuteAttributeTapCustom) // Regex or other string.
+    case custom(TapCustom)
 }
 
-public enum CuteAttributeTapCustom {
+/// use this to custom tap string. regex or string.
+///
+/// - regex: the regex to match
+/// - origin: the origin string to match
+public enum TapCustom {
     case regex(String)
     case origin(String)
 }
@@ -25,7 +34,7 @@ extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter type: CuteAttributeTapType without default value.
     /// - Returns: self
-    public func tap(_ type: CuteAttributeTapType) -> CuteAttribute<Base> {
+    public func tap(_ type: TapType) -> CuteAttribute<Base> {
         let tapRanges: [NSRange]
         switch type {
         case .link:
@@ -58,6 +67,10 @@ extension CuteAttribute where Base: NSMutableAttributedString {
         return self
     }
 
+    /// get ranges from `NSTextCheckingResult.CheckingType`, including link or phoneNumber.
+    ///
+    /// - Parameter checkingType: NSTextCheckingResult.CheckingType.
+    /// - Returns: [NSRange]
     internal func rangesFrom(checkingType: NSTextCheckingResult.CheckingType) -> [NSRange] {
         do {
             let dataHelper = try DataDetectorHelper(types: checkingType.rawValue)
@@ -67,6 +80,10 @@ extension CuteAttribute where Base: NSMutableAttributedString {
         }
     }
 
+    /// get ranges from special string.
+    ///
+    /// - Parameter str: String
+    /// - Returns: [NSRange]
     internal func rangeFrom(string str: String) -> [NSRange] {
         var range = base.string.range(substring: str)
         var tapRanges: [NSRange] = []
@@ -85,6 +102,10 @@ extension CuteAttribute where Base: NSMutableAttributedString {
         return tapRanges
     }
 
+    /// get ranges from regex string.
+    ///
+    /// - Parameter string: regex string
+    /// - Returns: [NSRange]
     internal func rangesFrom(string: String) -> [NSRange] {
         do {
             let regex = try RegexHelper(pattern: string)
@@ -94,6 +115,7 @@ extension CuteAttribute where Base: NSMutableAttributedString {
         }
     }
 
+    /// the special tapRanges array.
     internal var tapRanges: [NSRange] {
         get {
             let value = (objc_getAssociatedObject(base, CuteAttributeKey.tapRangesKey)
@@ -108,6 +130,7 @@ extension CuteAttribute where Base: NSMutableAttributedString {
         }
     }
 
+    /// UILabel highlight object if set.
     internal var labelHighlight: CuteHighlight? {
         get {
             return (objc_getAssociatedObject(base, CuteAttributeKey.highlightKey) as? Box<CuteHighlight?>)?.value

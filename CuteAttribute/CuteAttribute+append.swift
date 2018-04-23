@@ -6,7 +6,7 @@
 //  Copyright © 2017年 https://vsccw.com. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public extension CuteAttribute where Base: NSMutableAttributedString {
     /// Append

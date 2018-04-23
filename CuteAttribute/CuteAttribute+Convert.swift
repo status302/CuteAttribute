@@ -6,11 +6,7 @@
 //  Copyright © 2017年 https://vsccw.com. All rights reserved.
 //
 
-import UIKit
-
-protocol StringProtocol {
-
-}
+import Foundation
 
 public extension CuteAttribute {
     /// `String`, `NSString`, `NSMutableAttributedString` or `NSAttributedString` to `NSMutableAttributedString`

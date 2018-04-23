@@ -57,7 +57,6 @@ class ViewController: UIViewController {
 
         testLabel.delegate = self
     }
-
     private func showAlertController(_ message: String?) {
         let alertController = UIAlertController(title: "你点击了", message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "我知道啦", style: .default, handler: nil))

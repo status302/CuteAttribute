@@ -6,7 +6,7 @@
 //  Copyright © 2017年 https://vsccw.com. All rights reserved.
 //
 
-import UIKit
+import UIKit.UIColor
 
 public extension CuteAttribute where Base: NSMutableAttributedString {
 
@@ -132,6 +132,19 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     public func link(_ link: String) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.link, value: link, range: $0)
+        }
+        return self
+    }
+
+    /// Set link for `NSLinkAttributeName`,
+    /// this can be called after `range(_:)`,
+    /// or not the range is default all the string.
+    ///
+    /// - Parameter url: URL type without default value.
+    /// - Returns: self
+    public func link(_ url: URL) -> CuteAttribute<Base> {
+        ranges.forEach {
+            base.addAttribute(.link, value: url, range: $0)
         }
         return self
     }

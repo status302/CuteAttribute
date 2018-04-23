@@ -6,7 +6,7 @@
 //  Copyright © 2017年 https://vsccw.com. All rights reserved.
 //
 
-import UIKit
+import UIKit.UIColor
 
 public extension CuteAttribute where Base: NSMutableAttributedString {
 
