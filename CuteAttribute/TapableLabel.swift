@@ -120,10 +120,16 @@ extension TapableLabel {
         textContainer.maximumNumberOfLines = self.numberOfLines
         textContainer.size = CGSize(width: size.width, height: (size.height + CGFloat(self.numberOfLines)))
 
-        let characterIndex = layoutManager.glyphIndex(for: tapLocation, in: textContainer,
-                                                      fractionOfDistanceThroughGlyph: nil)
-        let glyphRect = layoutManager.boundingRect(forGlyphRange: NSRange(location: characterIndex, length: 1),
-                                                   in: textContainer)
-        return ranges.filter { glyphRect.contains(tapLocation) && NSLocationInRange(characterIndex, $0) }.first
+        let boundingBox = layoutManager.usedRect(for: textContainer)
+        let originY = (size.height - boundingBox.height) * 0.5 - boundingBox.minY
+        let location = CGPoint(x: tapLocation.x, y: tapLocation.y - originY)
+        guard location.x >= boundingBox.minX,
+            location.x <= boundingBox.minX + boundingBox.width,
+            location.y >= boundingBox.minY,
+            location.y <= boundingBox.minY + boundingBox.height
+            else { return nil }
+        let characterIndex = layoutManager.glyphIndex(for: location, in: textContainer,
+                                                     fractionOfDistanceThroughGlyph: nil)
+        return ranges.filter { NSLocationInRange(characterIndex, $0) }.first
     }
 }
