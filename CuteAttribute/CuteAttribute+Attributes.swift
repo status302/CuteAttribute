@@ -21,6 +21,18 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
         }
         return self
     }
+    
+    /// Set color for `NSAttributedString.Key.backgroundColor`,
+    /// this can be called after `range(_:)`, or not the range is default all the string.
+    ///
+    /// - Parameter color: UIColor type without default value.
+    /// - Returns: self
+    public func backgroundColor(_ color: UIColor) -> CuteAttribute<Base> {
+        ranges.forEach {
+            base.addAttribute(.backgroundColor, value: color, range: $0)
+        }
+        return self
+    }
 
     /// Set baseline for `NSBaselineOffsetAttributeName`,
     /// this can be called after `range(_:)`, or not the range is default all the string.
