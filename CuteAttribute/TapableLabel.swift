@@ -49,7 +49,7 @@ open class TapableLabel: UILabel {
         let attriubes = attributedText?.attributes(at: tappedRange.location,
                                                    longestEffectiveRange: nil,
                                                    in: tappedRange)
-        let attributedColor = attriubes?[NSAttributedStringKey.foregroundColor] as? UIColor
+        let attributedColor = attriubes?[.foregroundColor] as? UIColor
         highlight = CuteHighlight(textColor: attributedColor ?? textColor)
         let highlightColor = cute.attributedText?.labelHighlight?.textColor ?? CuteHighlight.default.textColor
         cute.attributedText = cute.attributedText?

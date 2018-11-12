@@ -11,27 +11,22 @@ import Foundation
 public extension CuteAttribute where Base: NSMutableAttributedString {
     /// `NSUnderlineStyle.styleSingle` underline style
     public var singleUnderline: CuteAttribute<Base> {
-        return underline(.styleSingle)
+        return underline(.single)
     }
 
     /// `NSUnderlineStyle.styleNone` underline style
     public var noneUnderline: CuteAttribute<Base> {
-        return underline(.styleNone)
+        return underline([])
     }
 
     /// `NSUnderlineStyle.styleThick` underline style
     public var thickUnderline: CuteAttribute<Base> {
-        return underline(.styleThick)
+        return underline(.thick)
     }
 
     /// `NSUnderlineStyle.styleDouble` underline style
     public var doubleUnderline: CuteAttribute<Base> {
-        return underline(.styleDouble)
-    }
-
-    /// `NSUnderlineStyle.patternSolid` underline style
-    public var patternSolidUnderline: CuteAttribute<Base> {
-        return underline(.patternSolid)
+        return underline(.double)
     }
 
     /// `NSUnderlineStyle.patternDot` underline style
