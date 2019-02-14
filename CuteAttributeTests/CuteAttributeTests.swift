@@ -35,7 +35,7 @@ class CuteAttributeTests: XCTestCase {
         let attributedString1 = cute
             .matchAllURL()
             .red
-            .underline(.styleSingle, color: UIColor.yellow)
+            .underline(.single, color: UIColor.yellow)
             .attributedString
         let attributedString2 = cute
             .match(string: "t")
@@ -51,14 +51,14 @@ class CuteAttributeTests: XCTestCase {
         let attributedString1 = cute
             .matchAllURL()
             .red
-            .underline(.styleSingle, color: UIColor.yellow)
+            .underline(.single, color: UIColor.yellow)
         let ranges = attributedString1.matchAllURL().ranges
         var underlineStyle: Int?
         if let range = ranges.first {
             let attributes = attributedString1.attributedString.attributes(at: range.location, effectiveRange: nil)
-            underlineStyle = attributes[NSAttributedStringKey.underlineStyle] as? Int
+            underlineStyle = attributes[NSAttributedString.Key.underlineStyle] as? Int
         }
-        XCTAssert(underlineStyle == NSUnderlineStyle.styleSingle.rawValue, "the color should be equal to UIColor.red.")
+        XCTAssert(underlineStyle == NSUnderlineStyle.single.rawValue, "the color should be equal to UIColor.red.")
     }
     func testColor() {
         let cute = text.cute

@@ -32,7 +32,7 @@ class ViewController: UIViewController {
             .font(UIFont.systemFont(ofSize: 40))
             .matchAllPhoneNumber()
             .rgbColor(0x880011)
-            .underline(.styleSingle)
+            .underline(.single)
             .underlineColor(.gray)
             .matchAllURL()
             .red
@@ -47,7 +47,7 @@ class ViewController: UIViewController {
             .cute
             .matchAllURL()
             .color(.red)
-            .underline(.styleSingle)
+            .underline(NSUnderlineStyle.single)
             .tap(.link)
             .highlight(.default)
             .tap(.phoneNumber)
