@@ -26,7 +26,8 @@ public final class CuteAttribute<Base>: NSObject {
 public extension CuteAttributeable {
 
     public var cute: CuteAttribute<Self> {
-        return CuteAttribute(self)
+        get { return CuteAttribute(self) }
+        set { }
     }
 }
 
