@@ -38,13 +38,32 @@ open class TapableLabel: UILabel {
         commitInit()
     }
 
+    open override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let superHitTest = super.hitTest(point, with: event)
+        guard bounds.contains(point) else { return superHitTest }
+        guard let tapRanges = cute.attributedText?.tapRanges else { return superHitTest }
+        guard let _ = didTapRangeOfLink(inRanges: tapRanges, tapLocation: point) else { return superHitTest }
+        return self
+    }
+    
     open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesBegan(touches, with: event)
-        guard let touch = touches.first else { return }
+        guard let touch = touches.first else {
+            super.touchesBegan(touches, with: event)
+            return
+        }
         let location = touch.location(in: self)
-        guard bounds.contains(location) else { return }
-        guard let tapRanges = cute.attributedText?.tapRanges else { return }
-        guard let tappedRange = didTapRangeOfLink(inRanges: tapRanges, tapLocation: location) else { return }
+        guard bounds.contains(location) else {
+            super.touchesBegan(touches, with: event)
+            return
+        }
+        guard let tapRanges = cute.attributedText?.tapRanges else {
+            super.touchesBegan(touches, with: event)
+            return
+        }
+        guard let tappedRange = didTapRangeOfLink(inRanges: tapRanges, tapLocation: location) else {
+            super.touchesBegan(touches, with: event)
+            return
+        }
         tappingRange = tappedRange
         let attriubes = attributedText?.attributes(at: tappedRange.location,
                                                    longestEffectiveRange: nil,
@@ -55,10 +74,6 @@ open class TapableLabel: UILabel {
         cute.attributedText = cute.attributedText?
             .match(range: tappedRange)
             .color(highlightColor)
-    }
-
-    open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
-        super.touchesMoved(touches, with: event)
     }
 
     open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -80,18 +95,20 @@ open class TapableLabel: UILabel {
 
     open override func touchesCancelled(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesCancelled(touches, with: event)
+        if let tappingRange = self.tappingRange {
+            let textColor = highlight?.textColor ?? .clear
+            cute.attributedText = cute.attributedText?
+                .match(range: tappingRange)
+                .color(textColor)
+        }
+        
+        tappingRange = nil
+        highlight = nil
+        previousAttributes = nil
     }
 
     internal func commitInit() {
         isUserInteractionEnabled = true
-    }
-
-    @objc private func handleTapGesture(_ tap: UITapGestureRecognizer) {
-        let location = tap.location(in: self)
-        guard bounds.contains(location) else { return }
-        guard let tapRanges = cute.attributedText?.tapRanges else { return }
-        guard let tappedRange = didTapRangeOfLink(inRanges: tapRanges, tapLocation: location) else { return }
-        delegate?.tapableLabel(self, didTap: tappedRange, text: text?.nsstring.substring(with: tappedRange))
     }
 }
 
