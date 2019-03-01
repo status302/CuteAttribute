@@ -12,7 +12,7 @@ import UIKit
 @objc
 public protocol TapableLabelDelegate: AnyObject {
     @objc
-    func tapableLabel(_ label: TapableLabel, didTap range: NSRange, text: String?)
+    optional func tapableLabel(_ label: TapableLabel, didTap range: NSRange, text: String?)
 }
 
 /// a subclass UILabel used to handle tap with CuteAttribute's `tap(_ type: CuteAttributeTapType)`
@@ -81,7 +81,7 @@ open class TapableLabel: UILabel {
     open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         super.touchesEnded(touches, with: event)
         if let tappingRange = self.tappingRange {
-            delegate?.tapableLabel(self,
+            delegate?.tapableLabel?(self,
                                    didTap: tappingRange,
                                    text: text?.nsstring.substring(with: tappingRange))
             let textColor = highlight?.textColor ?? .clear
