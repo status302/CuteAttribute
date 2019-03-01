@@ -9,7 +9,9 @@
 import UIKit
 
 /// The delegate to handle tap of label.
-public protocol TapableLabelDelegate: class {
+@objc
+public protocol TapableLabelDelegate: AnyObject {
+    @objc
     func tapableLabel(_ label: TapableLabel, didTap range: NSRange, text: String?)
 }
 
@@ -42,7 +44,7 @@ open class TapableLabel: UILabel {
         let superHitTest = super.hitTest(point, with: event)
         guard bounds.contains(point) else { return superHitTest }
         guard let tapRanges = cute.attributedText?.tapRanges else { return superHitTest }
-        guard let _ = didTapRangeOfLink(inRanges: tapRanges, tapLocation: point) else { return superHitTest }
+        guard didTapRangeOfLink(inRanges: tapRanges, tapLocation: point) != nil else { return superHitTest }
         return self
     }
     
