@@ -17,6 +17,14 @@ Swift 3.0 & iOS 8+
 
 Installation
 ===
+#### Swift Package Manager
+- add it to your Xcode project.
+- Import the header file in your project.
+
+```swift
+import CuteAttribute
+```
+
 #### CocoaPods
 - add it to your Podfile.
 
