@@ -14,7 +14,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter location: the location you choose to set.
     /// - Returns: self
-    public func from(_ location: Int) -> CuteAttribute<Base> {
+    func from(_ location: Int) -> CuteAttribute<Base> {
         assert(location <= base.string.length, "`from` must less than string's length.")
         from = location
         return self
@@ -26,7 +26,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter location: the locatoin you choose to set.
     /// - Returns: self
-    public func to(_ location: Int) -> CuteAttribute<Base> {
+    func to(_ location: Int) -> CuteAttribute<Base> {
         assert(location <= base.string.length, "`to` must less than string's length.")
         let range = NSRange(location: from, length: location - from)
         return self.range(range)
@@ -35,7 +35,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// Match all the `NSMutableAttributedString`.
     ///
     /// - Returns: self
-    public func matchAll() -> CuteAttribute<Base> {
+    func matchAll() -> CuteAttribute<Base> {
         self.ranges = [base.string.nsrange]
         return self
     }
@@ -44,7 +44,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter re: the regex pattern you set.
     /// - Returns: self
-    public func match(using regex: String) -> CuteAttribute<Base> {
+    func match(using regex: String) -> CuteAttribute<Base> {
         do {
             let regex = try RegexHelper(pattern: regex)
             ranges = regex.matchs(input: base.string)
@@ -58,7 +58,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter str: subString
     /// - Returns: self
-    public func match(string: String) -> CuteAttribute<Base> {
+    func match(string: String) -> CuteAttribute<Base> {
         var range = base.string.range(substring: string)
         assert(range.location != NSNotFound, "Substring must be in string.")
         ranges.removeAll()
@@ -80,7 +80,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter ran: the NSRange you set.
     /// - Returns: self
-    public func match(range ran: NSRange) -> CuteAttribute<Base> {
+    func match(range ran: NSRange) -> CuteAttribute<Base> {
         assert(base.string.nsrange >> ran, "range should be in range of string.")
         return self.range(ran)
     }
@@ -88,28 +88,28 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// Match all the url.
     ///
     /// - Returns: self
-    public func matchAllURL() -> CuteAttribute<Base> {
+    func matchAllURL() -> CuteAttribute<Base> {
         return matchAllAttribute(checkingType: .link)
     }
 
     /// Match all the phone number.
     ///
     /// - Returns: self
-    public func matchAllPhoneNumber() -> CuteAttribute<Base> {
+    func matchAllPhoneNumber() -> CuteAttribute<Base> {
         return matchAllAttribute(checkingType: .phoneNumber)
     }
 
     /// Match all the address.
     ///
     /// - Returns: self
-    public func matchAllAddress() -> CuteAttribute<Base> {
+    func matchAllAddress() -> CuteAttribute<Base> {
         return matchAllAttribute(checkingType: .address)
     }
 
     /// Match all the date.
     ///
     /// - Returns: self
-    public func matchAllDate() -> CuteAttribute<Base> {
+    func matchAllDate() -> CuteAttribute<Base> {
         return matchAllAttribute(checkingType: .date)
     }
 

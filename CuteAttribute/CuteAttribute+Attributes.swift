@@ -15,7 +15,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter color: UIColor type without default value.
     /// - Returns: self
-    public func color(_ color: UIColor) -> CuteAttribute<Base> {
+    func color(_ color: UIColor) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.foregroundColor, value: color, range: $0)
         }
@@ -27,7 +27,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter color: UIColor type without default value.
     /// - Returns: self
-    public func backgroundColor(_ color: UIColor) -> CuteAttribute<Base> {
+    func backgroundColor(_ color: UIColor) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.backgroundColor, value: color, range: $0)
         }
@@ -39,7 +39,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter baseline: CGFloat type without default value.
     /// - Returns: self
-    public func baseline(_ baseline: CGFloat) -> CuteAttribute<Base> {
+    func baseline(_ baseline: CGFloat) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.baselineOffset, value: baseline, range: $0)
         }
@@ -51,7 +51,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter underline: NSUnderlineStyle type without default value.
     /// - Returns: self
-    public func underline(_ underline: NSUnderlineStyle) -> CuteAttribute<Base> {
+    func underline(_ underline: NSUnderlineStyle) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.underlineStyle, value: underline.rawValue, range: $0)
         }
@@ -63,7 +63,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter color: UIColor type without default value.
     /// - Returns: self
-    public func underlineColor(_ color: UIColor) -> CuteAttribute<Base> {
+    func underlineColor(_ color: UIColor) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.underlineColor, value: color, range: $0)
         }
@@ -76,7 +76,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Parameter underlineStyle: NSUnderlineStyle type without default value.
     /// - Parameter color: UIColor type without default value.
     /// - Returns: self
-    public func underline(_ underlineStyle: NSUnderlineStyle, color: UIColor) -> CuteAttribute<Base> {
+    func underline(_ underlineStyle: NSUnderlineStyle, color: UIColor) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttributes([.underlineStyle: underlineStyle.rawValue, .underlineColor: color], range: $0)
         }
@@ -88,7 +88,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter font: UIFont type without default value.
     /// - Returns: self
-    public func font(_ font: UIFont) -> CuteAttribute<Base> {
+    func font(_ font: UIFont) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.font, value: font, range: $0)
         }
@@ -100,7 +100,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter name: String type without default value.
     /// - Returns: self
-    public func fontName(_ name: String) -> CuteAttribute<Base> {
+    func fontName(_ name: String) -> CuteAttribute<Base> {
         ranges.forEach {
             var mRange = $0
             let exitedFont = base.attribute(.font, at: 0, effectiveRange: &mRange) as? UIFont
@@ -116,7 +116,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter strike: NSUnderlineStyle type without default value.
     /// - Returns: self
-    public func strikeThrough(_ strike: NSUnderlineStyle) -> CuteAttribute<Base> {
+    func strikeThrough(_ strike: NSUnderlineStyle) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.strikethroughStyle, value: strike.rawValue, range: $0)
         }
@@ -128,7 +128,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter color: UIColor type without default value.
     /// - Returns: self
-    public func strikeThroughColor(_ color: UIColor) -> CuteAttribute<Base> {
+    func strikeThroughColor(_ color: UIColor) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.strikethroughColor, value: color, range: $0)
         }
@@ -141,7 +141,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter link: String type without default value.
     /// - Returns: self
-    public func link(_ link: String) -> CuteAttribute<Base> {
+    func link(_ link: String) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.link, value: link, range: $0)
         }
@@ -154,7 +154,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter url: URL type without default value.
     /// - Returns: self
-    public func link(_ url: URL) -> CuteAttribute<Base> {
+    func link(_ url: URL) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.link, value: url, range: $0)
         }
@@ -167,7 +167,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter ligature: Int type without default value.
     /// - Returns: self
-    public func ligature(_ ligature: Int) -> CuteAttribute<Base> {
+    func ligature(_ ligature: Int) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.ligature, value: ligature, range: $0)
         }
@@ -180,7 +180,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter kern: CGFloat type without default value.
     /// - Returns: self
-    public func kern(_ kern: CGFloat) -> CuteAttribute<Base> {
+    func kern(_ kern: CGFloat) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.kern, value: kern, range: $0)
         }
@@ -193,7 +193,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter color: UIColor type without default value.
     /// - Returns: self
-    public func strokeColor(_ color: UIColor) -> CuteAttribute<Base> {
+    func strokeColor(_ color: UIColor) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.strokeColor, value: color, range: $0)
         }
@@ -206,7 +206,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter width: CGFloat type without default value.
     /// - Returns: self
-    public func strokeWidth(_ width: CGFloat) -> CuteAttribute<Base> {
+    func strokeWidth(_ width: CGFloat) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.strokeWidth, value: width, range: $0)
         }
@@ -219,7 +219,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter shadow: NSShadow type without default value.
     /// - Returns: self
-    public func shadow(_ shadow: NSShadow) -> CuteAttribute<Base> {
+    func shadow(_ shadow: NSShadow) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.shadow, value: shadow, range: $0)
         }
@@ -232,7 +232,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter effect: String type without default value.
     /// - Returns: self
-    public func textEffect(_ effect: String) -> CuteAttribute<Base> {
+    func textEffect(_ effect: String) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.textEffect, value: effect, range: $0)
         }
@@ -245,7 +245,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter value: CGFloat type without default value.
     /// - Returns: self
-    public func obliqueness(_ value: CGFloat) -> CuteAttribute<Base> {
+    func obliqueness(_ value: CGFloat) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.obliqueness, value: value, range: $0)
         }
@@ -258,7 +258,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter value: CGFloat type without default value.
     /// - Returns: self
-    public func expansion(_ value: CGFloat) -> CuteAttribute<Base> {
+    func expansion(_ value: CGFloat) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.expansion, value: value, range: $0)
         }
@@ -270,10 +270,31 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter value: NSTextAttachment type without default value.
     /// - Returns: self
-    public func textAttachment(_ value: NSTextAttachment) -> CuteAttribute<Base> {
+    func textAttachment(_ value: NSTextAttachment) -> CuteAttribute<Base> {
         ranges.forEach {
             base.addAttribute(.attachment, value: value, range: $0)
         }
         return self
+    }
+    
+    /// Set `NSMutableParagraphStyle`
+    ///
+    /// - Parameter value: NSMutableParagraphStyle type, including lineSpacing, lineBreakMode...
+    /// - Returns: self
+    func paragraphStyle(_ value: NSMutableParagraphStyle) -> CuteAttribute<Base> {
+        ranges.forEach {
+            base.addAttribute(.paragraphStyle, value: value, range: $0)
+        }
+        return self
+    }
+    
+    /// Set the whole range lineSpace, it will come into effect when `matchAll()`,
+    ///
+    /// - Parameter value: line space value
+    /// - Returns: self
+    func lineSpacing(_ value: CGFloat) -> CuteAttribute<Base> {
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = value
+        return self.paragraphStyle(paragraphStyle)
     }
 }

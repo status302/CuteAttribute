@@ -17,7 +17,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     ///
     /// - Parameter string: It can be `String`, `NSString`, `NSMutableAttributedString` or `NSAttributedString`
     /// - Returns: self
-    public func append(_ string: Any) -> CuteAttribute<Base> {
+    func append(_ string: Any) -> CuteAttribute<Base> {
         let attributedString = CuteAttribute.convertToMutableAttributedString(string)
         base.append(attributedString)
         return self

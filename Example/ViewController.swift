@@ -48,6 +48,8 @@ class ViewController: UIViewController {
             .matchAllURL()
             .color(.red)
             .underline(NSUnderlineStyle.single)
+            .matchAll()
+            .lineSpacing(30)
             .tap(.link)
             .highlight(.default)
             .tap(.phoneNumber)

@@ -121,9 +121,18 @@ extension TapableLabel {
 
         let attributedString = NSMutableAttributedString(string: text)
         let textRange = NSRange(location: 0, length: attributedString.length)
-        attributedString.addAttributes([.font: self.font], range: textRange)
+        if let font = self.font {
+            attributedString.addAttributes([.font: font], range: textRange)
+        }
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.alignment = self.textAlignment
+        
+        if !text.isEmpty {
+            let attrs = attributedText?.attributes(at: 0, effectiveRange: nil)
+            if let paragraph = attrs?[NSAttributedString.Key.paragraphStyle] as? NSMutableParagraphStyle {
+                paragraphStyle.lineSpacing = paragraph.lineSpacing
+            }
+        }
         attributedString.addAttributes([.paragraphStyle: paragraphStyle], range: textRange)
 
         let size = self.bounds.size

@@ -11,7 +11,7 @@ import UIKit
 extension UILabel: CuteAttributeable { }
 
 public extension CuteAttribute where Base: UILabel {
-    public var attributedText: CuteAttribute<NSMutableAttributedString>? {
+    var attributedText: CuteAttribute<NSMutableAttributedString>? {
         set {
             base.attributedText = newValue?.attributedString
             base.internalCuteAttribute = newValue
