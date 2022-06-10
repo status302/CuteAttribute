@@ -59,7 +59,7 @@ public extension CuteAttribute where Base: NSMutableAttributedString {
     /// - Parameter str: subString
     /// - Returns: self
     func match(string: String) -> CuteAttribute<Base> {
-        var range = base.string.range(substring: string)
+        var range = base.string.lowercased().range(substring: string.lowercased())
         assert(range.location != NSNotFound, "Substring must be in string.")
         ranges.removeAll()
         ranges.append(range)
